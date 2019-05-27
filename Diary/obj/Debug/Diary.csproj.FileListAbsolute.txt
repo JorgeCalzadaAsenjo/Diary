@@ -68,8 +68,6 @@ C:\Users\Usuario\Desktop\Diary\Diary\obj\Debug\Diary.noteView.resources
 C:\Users\pikar\Desktop\Diary\Diary\bin\Debug\Diary.exe.config
 C:\Users\pikar\Desktop\Diary\Diary\bin\Debug\Diary.exe
 C:\Users\pikar\Desktop\Diary\Diary\bin\Debug\Diary.pdb
-C:\Users\pikar\Desktop\Diary\Diary\bin\Debug\en\Diary.resources.dll
-C:\Users\pikar\Desktop\Diary\Diary\bin\Debug\es\Diary.resources.dll
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.csprojAssemblyReference.cache
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.CalendarView.resources
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.ContactsView.resources
@@ -80,11 +78,7 @@ C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.noteView.resources
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.Properties.Resources.resources
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.RemindersView.resources
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.SettingsView.resources
-C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.MenuView.en.resources
-C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.MenuView.es.resources
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.csproj.GenerateResource.cache
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.csproj.CoreCompileInputs.cache
-C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\en\Diary.resources.dll
-C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\es\Diary.resources.dll
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.exe
 C:\Users\pikar\Desktop\Diary\Diary\obj\Debug\Diary.pdb

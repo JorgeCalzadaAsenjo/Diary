@@ -63,76 +63,77 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // newToolStripMenuItem
             // 
+            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contactToolStripMenuItem,
             this.eventToolStripMenuItem,
             this.noteToolStripMenuItem,
             this.reminderToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
             // 
             // contactToolStripMenuItem
             // 
-            this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
             resources.ApplyResources(this.contactToolStripMenuItem, "contactToolStripMenuItem");
+            this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
             // 
             // eventToolStripMenuItem
             // 
-            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
             resources.ApplyResources(this.eventToolStripMenuItem, "eventToolStripMenuItem");
+            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
             // 
             // noteToolStripMenuItem
             // 
-            this.noteToolStripMenuItem.Name = "noteToolStripMenuItem";
             resources.ApplyResources(this.noteToolStripMenuItem, "noteToolStripMenuItem");
+            this.noteToolStripMenuItem.Name = "noteToolStripMenuItem";
             // 
             // reminderToolStripMenuItem
             // 
-            this.reminderToolStripMenuItem.Name = "reminderToolStripMenuItem";
             resources.ApplyResources(this.reminderToolStripMenuItem, "reminderToolStripMenuItem");
+            this.reminderToolStripMenuItem.Name = "reminderToolStripMenuItem";
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             // 
             // closeToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             // 
             // toolsToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             // 
             // helpToolStripMenuItem
             // 
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.diaryHelpToolStripMenuItem,
             this.sendCommentToolStripMenuItem,
@@ -140,69 +141,68 @@
             this.searchForUpdateToolStripMenuItem,
             this.aboutDiaryToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // diaryHelpToolStripMenuItem
             // 
-            this.diaryHelpToolStripMenuItem.Name = "diaryHelpToolStripMenuItem";
             resources.ApplyResources(this.diaryHelpToolStripMenuItem, "diaryHelpToolStripMenuItem");
+            this.diaryHelpToolStripMenuItem.Name = "diaryHelpToolStripMenuItem";
             // 
             // sendCommentToolStripMenuItem
             // 
-            this.sendCommentToolStripMenuItem.Name = "sendCommentToolStripMenuItem";
             resources.ApplyResources(this.sendCommentToolStripMenuItem, "sendCommentToolStripMenuItem");
+            this.sendCommentToolStripMenuItem.Name = "sendCommentToolStripMenuItem";
             // 
             // licensingInformationToolStripMenuItem
             // 
-            this.licensingInformationToolStripMenuItem.Name = "licensingInformationToolStripMenuItem";
             resources.ApplyResources(this.licensingInformationToolStripMenuItem, "licensingInformationToolStripMenuItem");
+            this.licensingInformationToolStripMenuItem.Name = "licensingInformationToolStripMenuItem";
             // 
             // searchForUpdateToolStripMenuItem
             // 
-            this.searchForUpdateToolStripMenuItem.Name = "searchForUpdateToolStripMenuItem";
             resources.ApplyResources(this.searchForUpdateToolStripMenuItem, "searchForUpdateToolStripMenuItem");
+            this.searchForUpdateToolStripMenuItem.Name = "searchForUpdateToolStripMenuItem";
             // 
             // aboutDiaryToolStripMenuItem
             // 
-            this.aboutDiaryToolStripMenuItem.Name = "aboutDiaryToolStripMenuItem";
             resources.ApplyResources(this.aboutDiaryToolStripMenuItem, "aboutDiaryToolStripMenuItem");
+            this.aboutDiaryToolStripMenuItem.Name = "aboutDiaryToolStripMenuItem";
             // 
             // pictureReminders
             // 
+            resources.ApplyResources(this.pictureReminders, "pictureReminders");
             this.pictureReminders.BackColor = System.Drawing.Color.Transparent;
             this.pictureReminders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureReminders.Image = global::Diary.Properties.Resources.iconoReminders;
-            resources.ApplyResources(this.pictureReminders, "pictureReminders");
             this.pictureReminders.Name = "pictureReminders";
             this.pictureReminders.TabStop = false;
             this.pictureReminders.Click += new System.EventHandler(this.pictureReminders_Click);
             // 
             // pictureNotes
             // 
+            resources.ApplyResources(this.pictureNotes, "pictureNotes");
             this.pictureNotes.BackColor = System.Drawing.Color.Transparent;
             this.pictureNotes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureNotes.Image = global::Diary.Properties.Resources.iconoNotes;
-            resources.ApplyResources(this.pictureNotes, "pictureNotes");
             this.pictureNotes.Name = "pictureNotes";
             this.pictureNotes.TabStop = false;
             this.pictureNotes.Click += new System.EventHandler(this.pictureNotes_Click);
             // 
             // pictureContacts
             // 
+            resources.ApplyResources(this.pictureContacts, "pictureContacts");
             this.pictureContacts.BackColor = System.Drawing.Color.Transparent;
             this.pictureContacts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureContacts.Image = global::Diary.Properties.Resources.iconoContacts;
-            resources.ApplyResources(this.pictureContacts, "pictureContacts");
             this.pictureContacts.Name = "pictureContacts";
             this.pictureContacts.TabStop = false;
             this.pictureContacts.Click += new System.EventHandler(this.pictureContacts_Click);
             // 
             // pictureCalendar
             // 
+            resources.ApplyResources(this.pictureCalendar, "pictureCalendar");
             this.pictureCalendar.BackColor = System.Drawing.Color.Transparent;
             this.pictureCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureCalendar.Image = global::Diary.Properties.Resources.iconoCalendar;
-            resources.ApplyResources(this.pictureCalendar, "pictureCalendar");
             this.pictureCalendar.Name = "pictureCalendar";
             this.pictureCalendar.TabStop = false;
             this.pictureCalendar.Click += new System.EventHandler(this.pictureCalendar_Click);

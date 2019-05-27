@@ -115,12 +115,6 @@
     <EmbeddedResource Include="HelpView.resx">
       <DependentUpon>HelpView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuView.en.resx">
-      <DependentUpon>MenuView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuView.es.resx">
-      <DependentUpon>MenuView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuView.resx">
       <DependentUpon>MenuView.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RemindersView.resx">
       <DependentUpon>RemindersView.cs</DependentUpon>
@@ -157,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\iconoContacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\iconoCalendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\iconoNotes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\iconoReminders.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,7 +16,7 @@ namespace Diary
             contacts = load();
         }
 
-        public static Contacts GetNotes()
+        public static Contacts GetContacts()
         {
             if (getContacts == null)
             {

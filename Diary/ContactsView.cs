@@ -17,6 +17,14 @@ namespace Diary
         protected ContactsView()
         {
             InitializeComponent();
+            //listViewContacts.View = View.Details;
+            //listViewContacts.GridLines = true;
+            //listViewContacts.FullRowSelect = true;
+            /*foreach (Contact c in Contacts.GetContacts().ShowContacts())
+            {
+                string[] arr = { c.GetName(), c.GetPhone()};
+                listViewContacts.Items.Add(new ListViewItem());
+            }*/
         }
 
         public static ContactsView GetScreen()
@@ -33,6 +41,31 @@ namespace Diary
             MenuView.GetScreen().Show();
             this.Hide();
             contactsScreen = null;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSearchAll_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
