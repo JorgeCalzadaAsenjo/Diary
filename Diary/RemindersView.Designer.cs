@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "RemindersView";
             this.Text = "Diary - Reminders";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RemindersView_FormClosed);
             this.ResumeLayout(false);
 
         }

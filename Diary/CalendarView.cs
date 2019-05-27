@@ -12,23 +12,26 @@ namespace Diary
 {
     public partial class CalendarView : Form
     {
-        protected MenuView menuScreen;
+        protected static CalendarView calendarScreen;
 
-        public CalendarView(MenuView menuScreen)
+        protected CalendarView()
         {
             InitializeComponent();
-            this.menuScreen = menuScreen;
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        public static CalendarView GetScreen()
         {
-
+            if (calendarScreen == null)
+            {
+                calendarScreen = new CalendarView();
+            }
+            return calendarScreen;
         }
 
         private void CalendarView_FormClosed(object sender, FormClosedEventArgs e)
         {
-            menuScreen.Show();
-            //Application.Exit();
+            MenuView.GetScreen().Show();
+            this.Hide();
         }
     }
 }

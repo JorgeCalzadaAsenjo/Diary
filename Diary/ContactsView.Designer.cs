@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "ContactsView";
             this.Text = "Diary - Contacts";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ContactsView_FormClosed);
             this.ResumeLayout(false);
 
         }

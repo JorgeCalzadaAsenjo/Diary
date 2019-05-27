@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "NotesView";
             this.Text = "Diary - Notes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NotesView_FormClosed);
             this.ResumeLayout(false);
 
         }

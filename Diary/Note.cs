@@ -48,4 +48,9 @@ class Note
     protected void setCreateDate(DateTime createDate) { this.createDate = createDate; }
     protected void setLastModifyDate(DateTime lastModifyDate) { this.lastModifyDate = lastModifyDate; }
     protected void modifiedNote() { this.lastModifyDate = DateTime.Now; }
+
+    public override string ToString()
+    {
+        return id + ";" + title + ";" + textContent + ";" + createDate + ";" + lastModifyDate;
+    }
 }

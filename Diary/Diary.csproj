@@ -69,7 +69,6 @@
     <Compile Include="HelpView.Designer.cs">
       <DependentUpon>HelpView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs" />
     <Compile Include="MenuView.cs">
       <SubType>Form</SubType>
     </Compile>

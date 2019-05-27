@@ -12,12 +12,27 @@ namespace Diary
 {
     public partial class ContactsView : Form
     {
-        protected MenuView menuScreen;
+        protected static ContactsView contactsScreen;
 
-        public ContactsView(MenuView menuScreen)
+        protected ContactsView()
         {
             InitializeComponent();
-            this.menuScreen = menuScreen;
+        }
+
+        public static ContactsView GetScreen()
+        {
+            if (contactsScreen == null)
+            {
+                contactsScreen = new ContactsView();
+            }
+            return contactsScreen;
+        }
+
+        private void ContactsView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MenuView.GetScreen().Show();
+            this.Hide();
+            contactsScreen = null;
         }
     }
 }

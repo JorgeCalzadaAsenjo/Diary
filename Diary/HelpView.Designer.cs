@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "HelpView";
             this.Text = "Diary - Help";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HelpView_FormClosed);
             this.ResumeLayout(false);
 
         }

@@ -12,12 +12,26 @@ namespace Diary
 {
     public partial class SettingsView : Form
     {
-        protected MenuView menuScreen;
+        protected static SettingsView settingsScreen;
 
-        public SettingsView(MenuView menuScreen)
+        protected SettingsView()
         {
             InitializeComponent();
-            this.menuScreen = menuScreen;
+        }
+
+        public static SettingsView GetScreen()
+        {
+            if (settingsScreen == null)
+            {
+                settingsScreen = new SettingsView();
+            }
+            return settingsScreen;
+        }
+
+        private void SettingsView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MenuView.GetScreen().Show();
+            this.Hide();
         }
     }
 }

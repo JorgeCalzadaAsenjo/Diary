@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "SettingsView";
             this.Text = "Diary - Settings";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsView_FormClosed);
             this.ResumeLayout(false);
 
         }

@@ -12,9 +12,26 @@ namespace Diary
 {
     public partial class HelpView : Form
     {
-        public HelpView()
+        protected static HelpView helpScreen;
+
+        protected HelpView()
         {
             InitializeComponent();
+        }
+
+        public static HelpView GetScreen()
+        {
+            if (helpScreen == null)
+            {
+                helpScreen = new HelpView();
+            }
+            return helpScreen;
+        }
+
+        private void HelpView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MenuView.GetScreen().Show();
+            this.Hide();
         }
     }
 }

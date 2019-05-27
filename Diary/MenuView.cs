@@ -12,56 +12,63 @@ namespace Diary
 {
     public partial class MenuView : Form
     {
-        public MenuView()
+        protected static MenuView menuScreen;
+
+        protected MenuView()
         {
             InitializeComponent();
+            /*ContactsView.GetScreen();
+            CalendarView.GetScreen();
+            NotesView.GetScreen();
+            RemindersView.GetScreen();
+            SettingsView.GetScreen();
+            HelpView.GetScreen();*/
+        }
+
+        public static MenuView GetScreen()
+        {
+            if (menuScreen == null)
+            {
+                menuScreen = new MenuView();
+            }
+            return menuScreen;
         }
 
         private void contactButton_Click(object sender, EventArgs e)
         {
-            ContactsView contactsScreen = new ContactsView(this);
-
-            contactsScreen.Show();
+            ContactsView.GetScreen().Show();
             this.Hide();
         }
 
         private void calendarButton_Click(object sender, EventArgs e)
         {
-            CalendarView calendarScreen = new CalendarView(this);
 
-            calendarScreen.Show();
+            CalendarView c = CalendarView.GetScreen();
+            CalendarView.GetScreen().Show();
             this.Hide();
         }
 
         private void notesBbutton_Click(object sender, EventArgs e)
         {
-            NotesView notesScreen = new NotesView(this);
-
-            notesScreen.Show();
+            NotesView.GetScreen().Show();
             this.Hide();
         }
 
         private void remindersButton_Click(object sender, EventArgs e)
         {
-            RemindersView remindersScreen = new RemindersView(this);
-
-            remindersScreen.Show();
+            RemindersView.GetScreen().Show();
             this.Hide();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            SettingsView settingsScreen = new SettingsView(this);
-
-            settingsScreen.Show();
+            SettingsView.GetScreen().Show();
             this.Hide();
         }
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            HelpView helpScreen = new HelpView();
-
-            helpScreen.Show();
+            HelpView.GetScreen().Show();
             this.Hide();
         }
 

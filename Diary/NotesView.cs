@@ -12,12 +12,26 @@ namespace Diary
 {
     public partial class NotesView : Form
     {
-        protected MenuView menuScreen;
+        protected static NotesView notesScreen;
 
-        public NotesView(MenuView menuScreen)
+        public NotesView()
         {
             InitializeComponent();
-            this.menuScreen = menuScreen;
+        }
+
+        public static NotesView GetScreen()
+        {
+            if (notesScreen == null)
+            {
+                notesScreen = new NotesView();
+            }
+            return notesScreen;
+        }
+
+        private void NotesView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MenuView.GetScreen().Show();
+            this.Hide();
         }
     }
 }

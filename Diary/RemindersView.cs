@@ -12,12 +12,26 @@ namespace Diary
 {
     public partial class RemindersView : Form
     {
-        protected MenuView menuScreen;
+        protected static RemindersView remindersScreen;
 
-        public RemindersView(MenuView menuScreen)
+        protected RemindersView()
         {
             InitializeComponent();
-            this.menuScreen = menuScreen;
+        }
+
+        public static RemindersView GetScreen()
+        {
+            if (remindersScreen == null)
+            {
+                remindersScreen = new RemindersView();
+            }
+            return remindersScreen;
+        }
+
+        private void RemindersView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MenuView.GetScreen().Show();
+            this.Hide();
         }
     }
 }
