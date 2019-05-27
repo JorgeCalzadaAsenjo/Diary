@@ -1,25 +1,38 @@
-﻿class Contact
+﻿using System;
+
+class Contact
 {
     protected int id;
     protected string name;
-    protected string number;
+    protected string phone;
+    protected static int countId = 0;
 
-    public Contact(int id, string name, string number)
+    public Contact(int id, string name, string phone)
     {
-        this.id = id;
+        setId(id);
         this.name = name;
-        this.number = number;
+        this.phone = phone;
+    }
+
+    public Contact(string name, string phone) :
+        this(countId, name, phone)
+    {
     }
 
     public int GetId() { return id; }
     public string GetName() { return name; }
-    public string GetNumber() { return number; }
-    
+    public string GetPhone() { return phone; }
+
+    protected void setId(int id)
+    {
+        this.id = id;
+        countId = ++id;
+    }
     public void SetName(string name) { this.name = name; }
-    public void SetNumber(string number) { this.number = number; }
+    public void SetPhone(string phone) { this.phone = phone; }
 
     public override string ToString()
     {
-        return name + "(" + number + ")";
+        return name + "(" + phone + ")";
     }
 }

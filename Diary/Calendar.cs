@@ -16,6 +16,16 @@ namespace Diary
             events = load();
         }
 
+        public static Calendar GetCalendar()
+        {
+            if (getCalendar == null)
+            {
+                getCalendar = new Calendar();
+            }
+
+            return getCalendar;
+        }
+
         protected List<Event> load()
         {
             List<Event> list = new List<Event>();
@@ -105,39 +115,18 @@ namespace Diary
             }
         }
 
-        public static Calendar GetCalendar()
+        public Event AddEvent(string title, DateTime date, string note)
         {
-            if (getCalendar == null)
-            {
-                getCalendar = new Calendar();
-            }
-
-            return getCalendar;
-        }
-
-        public void AddEvent(string title, DateTime date, string note)
-        {
-            if (title == "")
-            {
-                Console.WriteLine("Error. Title is not optional");
-            }
-            else if (date == null)
-            {
-                Console.WriteLine("Error. Date is not optional");
-            }
-            else
-            {
-                events.Add(new Event(title, date, note));
-                Console.WriteLine("Todo correcto");
-            }
+            Event e = new Event(title, date, note);
+            events.Add(e);
+            save();
+            return e;
         }
 
         public void RemoveEvent(int position)
         {
-            if (position != -1)
-            {
-                events.RemoveAt(position);
-            }
+            events.RemoveAt(position);
+            save();
         }
 
         public List<Event> SearchEvent(string title, DateTime? date, string note, bool partial)
@@ -196,6 +185,28 @@ namespace Diary
             return result;
         }
 
+        public List<Event> SearchEvent(string search, bool partial)
+        {
+            List<Event> result = new List<Event>(events);
+
+            int i;
+
+            i = 0;
+            while (i < result.Count)
+            {
+                if (searchField(events[i].GetTitle(), search, partial) || searchField(events[i].GetNote(), search, partial))
+                {
+                    i++;
+                }
+                else
+                {
+                    result.RemoveAt(i);
+                }
+            }
+
+            return result;
+        }
+
         private bool searchField(string value1, string value2, bool partial)
         {
             if (partial)
@@ -215,17 +226,27 @@ namespace Diary
             }
         }
 
-        public List<Event> SearchEventInAll(string search, bool partial)
-        {
-            return SearchEvent(search, null, search, partial);
-        }
-
         public List<Event> ShowEvents()
         {
             return events;
         }
 
+        public Event ShowEvent(int index)
+        {
+            return events[index];
+        }
+
         public void ModifyEvents()
+        {
+
+        }
+
+        public void Export(string rute)
+        {
+
+        }
+
+        public void Import(string rute)
         {
 
         }

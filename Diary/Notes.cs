@@ -129,14 +129,104 @@ namespace Diary
             save();
         }
 
-        public List<Note> SearchNote(string text, string contentText)
+        public List<Note> SearchNote(string text, string contentText, DateTime? date, bool partial)
         {
-            return notes;
+            List<Note> result = new List<Note>(notes);
+
+            int i;
+            if (text != "")
+            {
+                i = 0;
+                while (i < result.Count)
+                {
+                    if (searchField(notes[i].GetTitle(), text, partial))
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        result.RemoveAt(i);
+                    }
+                }
+            }
+
+            if (date != null)
+            {
+                i = 0;
+                while (i < result.Count)
+                {
+                    if (notes[i].GetLastModifyDate().Equals(date))
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        result.RemoveAt(i);
+                    }
+                }
+            }
+
+            if (contentText != "")
+            {
+                i = 0;
+                while (i < result.Count)
+                {
+                    if (searchField(notes[i].GetTextContent(), contentText, partial))
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        result.RemoveAt(i);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Note> SearchNote(string search, bool partial)
+        {
+            List<Note> result = new List<Note>(notes);
+
+            int i = 0;
+            while (i < result.Count)
+            {
+                if (searchField(notes[i].GetTitle(), search, partial) || searchField(notes[i].GetTextContent(), search, partial))
+                {
+                    i++;
+                }
+                else
+                {
+                    result.RemoveAt(i);
+                }
+            }
+
+            return result;
         }
 
         public List<Note> SearchNote(string content)
         {
             return notes;
+        }
+
+        private bool searchField(string value1, string value2, bool partial)
+        {
+            if (partial)
+            {
+                if (value1.Length < value2.Length)
+                {
+                    string aux = value1;
+                    value1 = value2;
+                    value2 = aux;
+                }
+
+                return value1.ToUpper().Contains(value2.ToUpper());
+            }
+            else
+            {
+                return string.Equals(value1.ToUpper(), value2.ToUpper());
+            }
         }
 
         public List<Note> ShowNotes()
@@ -151,7 +241,6 @@ namespace Diary
 
         public void ModifyNote(int index, string title, string textContent)
         {
-            Note n = notes[index];
             notes[index].SetTitle(title);
             notes[index].SetTextContent(textContent);
             save();

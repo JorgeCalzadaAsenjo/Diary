@@ -1,105 +1,186 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Diary
 {
     class Contacts
     {
-        protected int option;
         protected List<Contact> contacts;
-        protected int actualId;
+        protected string configFile;
+        protected static Contacts getContacts;
 
-        public Contacts()
+        protected Contacts()
         {
-            option = -1;
-            contacts = new List<Contact>();
-            actualId = 0;
+            configFile = Diary.ConfigFiles.Contacts;
+            contacts = load();
         }
 
-        public void Run()
+        public static Contacts GetNotes()
         {
-
-            do
+            if (getContacts == null)
             {
-                Console.Clear();
-                Console.WriteLine("Contacts");
-                Console.WriteLine("1. Add");
-                Console.WriteLine("2. Remove");
-                Console.WriteLine("3. Show");
-                Console.WriteLine("4. Search");
-                Console.WriteLine("5. Show sorted by...");
-                Console.WriteLine("0. Back to menu");
-                Console.Write("Select option: ");
+                getContacts = new Contacts();
+            }
+
+            return getContacts;
+        }
+
+        protected List<Contact> load()
+        {
+            List<Contact> list = new List<Contact>();
+            StreamReader reader = null;
+
+            if (File.Exists(configFile))
+            {
                 try
                 {
-                    option = Convert.ToInt32(Console.ReadLine());
+                    reader = File.OpenText(configFile);
+                    string line;
+                    string[] fields;
+
+                    do
+                    {
+                        line = reader.ReadLine();
+                        if (line != null)
+                        {
+                            fields = line.Split(';');
+                            //list.Add(new Contact());
+                        }
+                    } while (line != null);
+                }
+                catch (System.Exception)
+                {
+                    Console.WriteLine("Error en lectura de fichero de notas");
+                }
+                finally
+                {
+                    if (reader != null)
+                    {
+                        reader.Close();
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        protected void save()
+        {
+            StreamWriter writer = null;
+            bool correctSave = false;
+
+            try
+            {
+                if (File.Exists("~" + configFile))
+                {
+                    writer = File.AppendText("~" + configFile);
+                }
+                else
+                {
+                    writer = File.CreateText("~" + configFile);
+                }
+
+                for (int i = 0; i < contacts.Count; i++)
+                {
+                    writer.WriteLine(contacts[i]);
+                }
+
+                correctSave = true;
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Error en escritura en fichero de notas");
+            }
+            finally
+            {
+                if (writer != null)
+                {
+                    writer.Close();
+                }
+            }
+
+            if (correctSave)
+            {
+                try
+                {
+
+                    File.Delete(configFile);
+                    File.Move("~" + configFile, configFile);
                 }
                 catch (Exception)
                 {
-                    option = -1;
+                    Console.WriteLine("Error en mover");
                 }
-
-
-                switch (option)
-                {
-                    case 1:
-                        AddContact();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        ShowContact();
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    default:
-                        Console.WriteLine("Option no valid. ");
-                        break;
-                }
-
-                Console.WriteLine("Press a key to continue...");
-                Console.ReadKey(false);
-            } while (option != 0);
+            }
         }
 
-        private void AddContact()
+        private Contact AddContact(string name, string phone)
         {
-            Console.Write("Enter the name: ");
-            string name = Console.ReadLine();
-            Console.Write("Enter the phone number: ");
-            string phone = Console.ReadLine();
-
-            contacts.Add(new Contact(actualId, name, phone));
-            actualId++;
-            Console.Write("Successfully added contact. ");
+            Contact c = new Contact(name, phone);
+            contacts.Add(c);
+            save();
+            return c;
         }
 
-        private void RemoveContact()
+        private void RemoveContact(int index)
         {
-            Console.Write("Enter the index number of the contact to delete: ");
-            int remove = Convert.ToInt32(Console.ReadLine()) - 1;
+            contacts.RemoveAt(index);
+            save();
+        }
 
-            if (remove >= 0 && remove < contacts.Count)
+        /*public List<Contact> SearchContact()
+        {
+
+        }
+
+        public List<Contact> SearchContact()
+        {
+
+        }*/
+
+        private bool searchField(string value1, string value2, bool partial)
+        {
+            if (partial)
             {
-                contacts.RemoveAt(remove);
+                if (value1.Length < value2.Length)
+                {
+                    string aux = value1;
+                    value1 = value2;
+                    value2 = aux;
+                }
+
+                return value1.ToUpper().Contains(value2.ToUpper());
             }
             else
             {
-
+                return string.Equals(value1.ToUpper(), value2.ToUpper());
             }
         }
 
-        public void ShowContact()
+        public List<Contact> ShowContacts()
         {
-            for (int i = 1; i <= contacts.Count; i++)
-            {
-                Console.WriteLine(i + ". " + contacts[i - 1]);
-            }
+            return contacts;
         }
 
-        public void SearchContact()
+        public Contact ShowContact(int index)
+        {
+            return contacts[index];
+        }
+
+        public void ModifyNote(int index, string name, string phone)
+        {
+            contacts[index].SetName(name);
+            contacts[index].SetPhone(phone);
+            save();
+        }
+
+        public void Export(string rute)
+        {
+
+        }
+
+        public void Import(string rute)
         {
 
         }
