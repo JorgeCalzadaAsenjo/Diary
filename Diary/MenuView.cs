@@ -17,12 +17,7 @@ namespace Diary
         protected MenuView()
         {
             InitializeComponent();
-            /*ContactsView.GetScreen();
-            CalendarView.GetScreen();
-            NotesView.GetScreen();
-            RemindersView.GetScreen();
-            SettingsView.GetScreen();
-            HelpView.GetScreen();*/
+            reload();
         }
 
         public static MenuView GetScreen()
@@ -32,6 +27,11 @@ namespace Diary
                 menuScreen = new MenuView();
             }
             return menuScreen;
+        }
+
+        public void reload()
+        {
+
         }
 
         private void MenuView_FormClosed(object sender, FormClosedEventArgs e)
@@ -47,7 +47,7 @@ namespace Diary
 
         private void pictureCalendar_Click(object sender, EventArgs e)
         {
-            SettingsView.GetScreen().Show();
+            CalendarView.GetScreen().Show();
             this.Hide();
         }
 
@@ -61,6 +61,28 @@ namespace Diary
         {
             RemindersView.GetScreen().Show();
             this.Hide();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsView.GetScreen().Show();
+            this.Hide();
+        }
+
+        private void diaryHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpView.GetScreen().Show();
+            this.Hide();
+        }
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Diary
         {
             MenuView.GetScreen().Show();
             this.Hide();
+            calendarScreen = null;
         }
     }
 }

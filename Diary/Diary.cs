@@ -13,22 +13,25 @@ namespace Diary
         public readonly string Notes;
         public readonly string Reminders;
         public readonly string Settings;
+        public readonly string Dictionaries;
         public readonly string Help;
 
-        public Files(string contacts, string calendar, string notes, string reminders, string settings, string help)
+        public Files(string contacts, string calendar, string notes, string reminders, string settings, string dictionaries, string help)
         {
             Contacts = contacts;
             Calendar = calendar;
             Notes = notes;
             Reminders = reminders;
             Settings = settings;
+            Dictionaries = dictionaries;
             Help = help;
         }
     }
 
     static class Diary
     {
-        public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, null, null);
+        public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, null, null, null);
+        public static string languaje;
 
 
         /// <summary>

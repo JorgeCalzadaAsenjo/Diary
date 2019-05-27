@@ -93,11 +93,13 @@
             // 
             this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
             resources.ApplyResources(this.contactToolStripMenuItem, "contactToolStripMenuItem");
+            this.contactToolStripMenuItem.Click += new System.EventHandler(this.contactToolStripMenuItem_Click);
             // 
             // eventToolStripMenuItem
             // 
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
             resources.ApplyResources(this.eventToolStripMenuItem, "eventToolStripMenuItem");
+            this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
             // 
             // noteToolStripMenuItem
             // 
@@ -130,6 +132,7 @@
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -146,6 +149,7 @@
             // 
             this.diaryHelpToolStripMenuItem.Name = "diaryHelpToolStripMenuItem";
             resources.ApplyResources(this.diaryHelpToolStripMenuItem, "diaryHelpToolStripMenuItem");
+            this.diaryHelpToolStripMenuItem.Click += new System.EventHandler(this.diaryHelpToolStripMenuItem_Click);
             // 
             // sendCommentToolStripMenuItem
             // 

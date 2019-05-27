@@ -41,6 +41,8 @@
             this.titleNote.Name = "titleNote";
             this.titleNote.Size = new System.Drawing.Size(647, 29);
             this.titleNote.TabIndex = 0;
+            this.titleNote.Enter += new System.EventHandler(this.titleNote_Enter);
+            this.titleNote.Leave += new System.EventHandler(this.titleNote_Leave);
             // 
             // contentTextNote
             // 
@@ -49,6 +51,8 @@
             this.contentTextNote.Name = "contentTextNote";
             this.contentTextNote.Size = new System.Drawing.Size(647, 258);
             this.contentTextNote.TabIndex = 1;
+            this.contentTextNote.Enter += new System.EventHandler(this.contentTextNote_Enter);
+            this.contentTextNote.Leave += new System.EventHandler(this.contentTextNote_Leave);
             // 
             // saveNote
             // 

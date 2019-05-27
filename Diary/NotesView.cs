@@ -33,7 +33,10 @@ namespace Diary
 
         private void NotesView_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            MenuView.GetScreen().Show();
+            this.Hide();
+            notesScreen = null;
         }
 
         private void addNote_Click(object sender, EventArgs e)
