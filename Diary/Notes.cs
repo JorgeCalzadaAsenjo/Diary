@@ -115,10 +115,12 @@ namespace Diary
             }
         }
 
-        public void AddNote(string title, string textContent)
+        public Note AddNote(string title, string textContent)
         {
-            notes.Add(new Note(title, textContent));
+            Note n = new Note(title, textContent);
+            notes.Add(n);
             save();
+            return n;
         }
 
         public void RemoveNote(int index)
@@ -127,7 +129,12 @@ namespace Diary
             save();
         }
 
-        public List<Note> SearchNote()
+        public List<Note> SearchNote(string text, string contentText)
+        {
+            return notes;
+        }
+
+        public List<Note> SearchNote(string content)
         {
             return notes;
         }
@@ -144,8 +151,20 @@ namespace Diary
 
         public void ModifyNote(int index, string title, string textContent)
         {
+            Note n = notes[index];
             notes[index].SetTitle(title);
             notes[index].SetTextContent(textContent);
+            save();
+        }
+
+        public void Export(string rute)
+        {
+
+        }
+
+        public void Import(string rute)
+        {
+
         }
     }
 }

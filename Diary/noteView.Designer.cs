@@ -81,6 +81,8 @@
             this.Controls.Add(this.titleNote);
             this.Name = "noteView";
             this.Text = "noteView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.noteView_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.noteView_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
