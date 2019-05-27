@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Note
+public class Note
 {
     protected int id;
     protected string title;

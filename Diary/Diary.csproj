@@ -84,6 +84,12 @@
       <DependentUpon>NotesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Diary.cs" />
+    <Compile Include="noteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="noteView.Designer.cs">
+      <DependentUpon>noteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reminder.cs" />
     <Compile Include="Reminders.cs" />
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NotesView.resx">
       <DependentUpon>NotesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="noteView.resx">
+      <DependentUpon>noteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

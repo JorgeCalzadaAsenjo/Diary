@@ -7,13 +7,26 @@ namespace Diary
     class Notes
     {
         protected List<Note> notes;
+        protected string configFile;
+        protected static Notes getNotes;
 
-        public Notes()
+        protected Notes()
         {
-            notes = load(Diary.ConfigFiles.Notes);
+            configFile = Diary.ConfigFiles.Notes;
+            notes = load();
         }
 
-        protected List<Note> load(string configFile)
+        public static Notes GetNotes()
+        {
+            if (getNotes == null)
+            {
+                getNotes = new Notes();
+            }
+
+            return getNotes;
+        }
+
+        protected List<Note> load()
         {
             List<Note> list = new List<Note>();
             StreamReader reader = null;
@@ -39,7 +52,6 @@ namespace Diary
                 catch (System.Exception)
                 {
                     Console.WriteLine("Error en lectura de fichero de notas");
-                    throw;
                 }
                 finally
                 {
@@ -53,32 +65,52 @@ namespace Diary
             return list;
         }
 
-        protected void save(string configFile)
+        protected void save()
         {
             StreamWriter writer = null;
+            bool correctSave = false;
 
-            if (File.Exists(configFile))
+            try
+            {
+                if (File.Exists("~" + configFile))
+                {
+                    writer = File.AppendText("~" + configFile);
+                }
+                else
+                {
+                    writer = File.CreateText("~" + configFile);
+                }
+
+                for (int i = 0; i < notes.Count; i++)
+                {
+                    writer.WriteLine(notes[i]);
+                }
+
+                correctSave = true;
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Error en escritura en fichero de notas");
+            }
+            finally
+            {
+                if (writer != null)
+                {
+                    writer.Close();
+                }
+            }
+
+            if (correctSave)
             {
                 try
                 {
-                    writer = File.CreateText(configFile);
 
-                    for (int i = 0; i < notes.Count; i++)
-                    {
-                        writer.WriteLine(notes[i]);
-                    }
+                    File.Delete(configFile);
+                    File.Move("~" + configFile, configFile);
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
-                    Console.WriteLine("Error en escritura en fichero de notas");
-                    throw;
-                }
-                finally
-                {
-                    if (writer != null)
-                    {
-                        writer.Close();
-                    }
+                    Console.WriteLine("Error en mover");
                 }
             }
         }
@@ -86,11 +118,13 @@ namespace Diary
         public void AddNote(string title, string textContent)
         {
             notes.Add(new Note(title, textContent));
+            save();
         }
 
         public void RemoveNote(int index)
         {
             notes.RemoveAt(index);
+            save();
         }
 
         public List<Note> SearchNote()

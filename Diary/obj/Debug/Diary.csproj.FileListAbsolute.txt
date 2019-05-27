@@ -64,3 +64,4 @@ C:\Users\Usuario\Desktop\Diary\Diary\bin\Debug\en\Diary.resources.dll
 C:\Users\Usuario\Desktop\Diary\Diary\bin\Debug\es\Diary.resources.dll
 C:\Users\Usuario\Desktop\Diary\Diary\obj\Debug\en\Diary.resources.dll
 C:\Users\Usuario\Desktop\Diary\Diary\obj\Debug\es\Diary.resources.dll
+C:\Users\Usuario\Desktop\Diary\Diary\obj\Debug\Diary.noteView.resources

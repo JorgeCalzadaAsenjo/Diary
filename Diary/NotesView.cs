@@ -17,6 +17,10 @@ namespace Diary
         public NotesView()
         {
             InitializeComponent();
+            Notes.GetNotes();
+            listBoxNotes.DataSource = null;
+            listBoxNotes.DataSource = Notes.GetNotes().ShowNotes();
+            Notes.GetNotes().AddNote("Hola", "Este es un ejemplo de nota");
         }
 
         public static NotesView GetScreen()
@@ -29,6 +33,28 @@ namespace Diary
         }
 
         private void NotesView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void addNote_Click(object sender, EventArgs e)
+        {
+            noteView newNote = new noteView();
+            newNote.ShowDialog();
+        }
+
+        private void editNote_Click(object sender, EventArgs e)
+        {
+            noteView editNote = new noteView(Notes.GetNotes().ShowNote(listBoxNotes.SelectedIndex));
+            editNote.ShowDialog();
+        }
+
+        private void deleteNote_Click(object sender, EventArgs e)
+        {
+            Notes.GetNotes().RemoveNote(listBoxNotes.SelectedIndex);
+        }
+
+        private void backToMenu_Click(object sender, EventArgs e)
         {
             MenuView.GetScreen().Show();
             this.Hide();
