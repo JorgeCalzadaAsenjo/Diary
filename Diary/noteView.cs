@@ -10,18 +10,22 @@ using System.Windows.Forms;
 
 namespace Diary
 {
-    public partial class noteView : Form
+    public partial class NoteView : Form
     {
         protected int type;
         protected Note note;
 
-        public noteView()
+        public NoteView()
         {
             InitializeComponent();
             type = 0;
+            titleNote.Text = "Enter a title ";
+            titleNote.ForeColor = Color.LightGray;
+            contentTextNote.Text = "Enter a text ";
+            contentTextNote.ForeColor = Color.LightGray;
         }
 
-        public noteView(Note note)
+        public NoteView(Note note)
         {
             InitializeComponent();
             this.note = note;
@@ -32,16 +36,17 @@ namespace Diary
 
         private void saveNote_Click(object sender, EventArgs e)
         {
-            string title = !titleNote.Text.Equals("Enter a title" + ((char)0).ToString()) ? titleNote.Text : "";
-            string content = contentTextNote.Text.Equals("Enter a text" + ((char)0).ToString()) ? contentTextNote.Text : "";
+            string title = !titleNote.Text.Equals("Enter a title ") ? titleNote.Text : "";
+            string content = contentTextNote.Text.Equals("Enter a text ") ? contentTextNote.Text : "";
+
 
             if (type == 0)
             {
-                this.note = Notes.GetNotes().AddNote(title, content);
+                this.note = NotesList.GetNotesList().AddNote(title, content);
             }
             else if (type == 1)
             {
-                Notes.GetNotes().ModifyNote(note.GetId(), title, content);
+                NotesList.GetNotesList().ModifyNote(note.GetId(), title, content);
             }
 
             NotesView.GetScreen().reload();
@@ -59,7 +64,7 @@ namespace Diary
 
         private void noteView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((note == null && (!titleNote.Text.Equals("") || !contentTextNote.Text.Equals("")) || (!titleNote.Text.Equals("Enter a title" + ((char)0).ToString()) || !contentTextNote.Text.Equals("Enter a text" + ((char)0).ToString())) || (note != null && (!note.GetTitle().Equals(titleNote.Text) || !note.GetTextContent().Equals(contentTextNote.Text)))))
+            if ((note == null && ((!titleNote.Text.Equals("") && (!titleNote.Text.Equals("Enter a title ")) || (!contentTextNote.Text.Equals("")) && !contentTextNote.Text.Equals("Enter a text "))) || (note != null && (!note.GetTitle().Equals(titleNote.Text) || !note.GetTextContent().Equals(contentTextNote.Text)))))
             {
                 DialogResult confirmResult = MessageBox.Show("Save before you leave?", "Confirma", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
@@ -67,11 +72,11 @@ namespace Diary
                 {
                     if (type == 0)
                     {
-                        this.note = Notes.GetNotes().AddNote(titleNote.Text, contentTextNote.Text);
+                        this.note = NotesList.GetNotesList().AddNote(titleNote.Text, contentTextNote.Text);
                     }
                     else if (type == 1)
                     {
-                        Notes.GetNotes().ModifyNote(note.GetId(), titleNote.Text, contentTextNote.Text);
+                        NotesList.GetNotesList().ModifyNote(note.GetId(), titleNote.Text, contentTextNote.Text);
                     }
 
                     NotesView.GetScreen().reload();
@@ -85,38 +90,39 @@ namespace Diary
 
         private void titleNote_Enter(object sender, EventArgs e)
         {
-            /*if (titleNote.Text == ("Enter a title" + ((char)0).ToString()))
+            if (titleNote.Text == ("Enter a title "))
             {
                 titleNote.Text = "";
                 titleNote.ForeColor = Color.Black;
-            }*/
+            }
+            
         }
 
         private void titleNote_Leave(object sender, EventArgs e)
         {
-            /*if (titleNote.Text == "")
+            if (titleNote.Text == "")
             {
-                titleNote.Text = "Enter a title" + ((char)0).ToString();
+                titleNote.Text = "Enter a title ";
                 titleNote.ForeColor = Color.LightGray;
-            }*/
+            }
         }
 
         private void contentTextNote_Enter(object sender, EventArgs e)
         {
-            /*if (contentTextNote.Text == ("Enter a text" + ((char)0).ToString()))
+            if (contentTextNote.Text == ("Enter a text "))
             {
                 contentTextNote.Text = "";
                 contentTextNote.ForeColor = Color.Black;
-            }*/
+            }
         }
 
         private void contentTextNote_Leave(object sender, EventArgs e)
         {
-            /*if (contentTextNote.Text == "")
+            if (contentTextNote.Text == "")
             {
-                contentTextNote.Text = "Enter a text" + ((char)0).ToString();
+                contentTextNote.Text = "Enter a text ";
                 contentTextNote.ForeColor = Color.LightGray;
-            }*/
+            }
         }
     }
 }

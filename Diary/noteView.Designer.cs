@@ -1,6 +1,6 @@
 ﻿namespace Diary
 {
-    partial class noteView
+    partial class NoteView
     {
         /// <summary>
         /// Required designer variable.

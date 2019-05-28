@@ -8,19 +8,19 @@ namespace Diary
 {
     public struct Files
     {
-        public readonly string Contacts;
+        public readonly string ContactsList;
         public readonly string Calendar;
-        public readonly string Notes;
+        public readonly string NotesList;
         public readonly string Reminders;
         public readonly string Settings;
         public readonly string Dictionaries;
         public readonly string Help;
 
-        public Files(string contacts, string calendar, string notes, string reminders, string settings, string dictionaries, string help)
+        public Files(string contactsList, string calendar, string notesList, string reminders, string settings, string dictionaries, string help)
         {
-            Contacts = contacts;
+            ContactsList = contactsList;
             Calendar = calendar;
-            Notes = notes;
+            NotesList = notesList;
             Reminders = reminders;
             Settings = settings;
             Dictionaries = dictionaries;

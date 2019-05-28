@@ -4,26 +4,26 @@ using System.IO;
 
 namespace Diary
 {
-    class Notes
+    class NotesList
     {
         protected List<Note> notes;
         protected string configFile;
-        protected static Notes getNotes;
+        protected static NotesList getNotesList;
 
-        protected Notes()
+        protected NotesList()
         {
-            configFile = Diary.ConfigFiles.Notes;
+            configFile = Diary.ConfigFiles.NotesList;
             notes = load();
         }
 
-        public static Notes GetNotes()
+        public static NotesList GetNotesList()
         {
-            if (getNotes == null)
+            if (getNotesList == null)
             {
-                getNotes = new Notes();
+                getNotesList = new NotesList();
             }
 
-            return getNotes;
+            return getNotesList;
         }
 
         protected List<Note> load()

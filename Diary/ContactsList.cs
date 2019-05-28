@@ -4,26 +4,26 @@ using System.IO;
 
 namespace Diary
 {
-    class Contacts
+    class ContactsList
     {
         protected List<Contact> contacts;
         protected string configFile;
-        protected static Contacts getContacts;
+        protected static ContactsList getContactsList;
 
-        protected Contacts()
+        protected ContactsList()
         {
-            configFile = Diary.ConfigFiles.Contacts;
+            configFile = Diary.ConfigFiles.ContactsList;
             contacts = load();
         }
 
-        public static Contacts GetContacts()
+        public static ContactsList GetContactsList()
         {
-            if (getContacts == null)
+            if (getContactsList == null)
             {
-                getContacts = new Contacts();
+                getContactsList = new ContactsList();
             }
 
-            return getContacts;
+            return getContactsList;
         }
 
         protected List<Contact> load()
