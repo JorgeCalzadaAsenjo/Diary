@@ -30,9 +30,13 @@ namespace Diary
 
     static class Diary
     {
-        public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, null, null, null);
+        public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, "settings.txt", "dictionaries", null);
         public static string languaje;
 
+        public static void reloadAll()
+        {
+
+        }
 
         /// <summary>
         /// Main entry point for the application.

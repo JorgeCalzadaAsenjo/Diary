@@ -16,5 +16,10 @@ namespace Diary
         {
             InitializeComponent();
         }
+
+        public ContactView(Contact contact)
+        {
+            InitializeComponent();
+        }
     }
 }

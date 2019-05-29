@@ -45,7 +45,8 @@ namespace Diary
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            ContactView newContact = new ContactView();
+            newContact.ShowDialog();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)

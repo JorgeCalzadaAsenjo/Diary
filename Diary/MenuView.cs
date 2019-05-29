@@ -31,7 +31,10 @@ namespace Diary
 
         public void reload()
         {
-
+            labelContactMenu.Text = Settings.GetText("Contact");
+            labelCalendarMenu.Text = Settings.GetText("Calendar");
+            labelNotesMenu.Text = Settings.GetText("Notes");
+            labelReminderMenu.Text = Settings.GetText("Reminder");
         }
 
         private void MenuView_FormClosed(object sender, FormClosedEventArgs e)

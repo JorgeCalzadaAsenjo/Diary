@@ -1,56 +1,61 @@
 ﻿using System;
 
-public class Note
-{
-    protected int id;
-    protected string title;
-    protected string textContent;
-    protected DateTime createDate;
-    protected DateTime lastModifyDate;
-    protected static int countId = 0;
-
-    public Note(string title, string textContent) : 
-        this(countId, title, textContent, DateTime.Now, DateTime.Now)
+namespace Diary {
+    public class Note
     {
-    }
+        protected int id;
+        protected string title;
+        protected string textContent;
+        protected DateTime createDate;
+        protected DateTime lastModifyDate;
+        protected static int countId = 0;
 
-    public Note(int id, string title, string textContent, DateTime createDate, DateTime lastModifyDate)
-    {
-        setId(id);
-        SetTitle(title);
-        SetTextContent(textContent);
-        setCreateDate(createDate);
-        setLastModifyDate(lastModifyDate);
-    }
+        public Note(string title, string textContent) :
+            this(countId, title, textContent, DateTime.Now, DateTime.Now)
+        {
+        }
 
-    public int GetId() { return id; }
-    public string GetTitle() { return title; }
-    public string GetTextContent() { return textContent; }
-    public DateTime GetCreateDate() { return createDate; }
-    public DateTime GetLastModifyDate() { return lastModifyDate; }
+        public Note(int id, string title, string textContent, DateTime createDate, DateTime lastModifyDate)
+        {
+            setId(id);
+            SetTitle(title);
+            SetTextContent(textContent);
+            setCreateDate(createDate);
+            setLastModifyDate(lastModifyDate);
+        }
 
-    protected void setId(int id)
-    {
-        this.id = id;
-        countId = ++id;
-    }
+        public int GetId() { return id; }
+        public string GetTitle() { return title; }
+        public string GetTextContent() { return textContent; }
+        public DateTime GetCreateDate() { return createDate; }
+        public DateTime GetLastModifyDate() { return lastModifyDate; }
 
-    public void SetTitle(string title) {
-        this.title = title;
-        modifiedNote();
-    }
+        protected void setId(int id)
+        {
+            this.id = id;
+            countId = ++id;
+        }
 
-    public void SetTextContent(string textContent) {
-        this.textContent = textContent;
-        modifiedNote();
-    }
+        public void SetTitle(string title)
+        {
+            this.title = title;
+            modifiedNote();
+        }
 
-    protected void setCreateDate(DateTime createDate) { this.createDate = createDate; }
-    protected void setLastModifyDate(DateTime lastModifyDate) { this.lastModifyDate = lastModifyDate; }
-    protected void modifiedNote() { this.lastModifyDate = DateTime.Now; }
+        public void SetTextContent(string textContent)
+        {
+            this.textContent = textContent;
+            modifiedNote();
+        }
 
-    public override string ToString()
-    {
-        return id + ";" + title + ";" + textContent + ";" + createDate + ";" + lastModifyDate;
+        protected void setCreateDate(DateTime createDate) { this.createDate = createDate; }
+        protected void setLastModifyDate(DateTime lastModifyDate) { this.lastModifyDate = lastModifyDate; }
+        protected void modifiedNote() { this.lastModifyDate = DateTime.Now; }
+
+        public override string ToString()
+        {
+            return id + ";" + title + ";" + textContent + ";" + createDate + ";" + lastModifyDate;
+        }
     }
 }
+

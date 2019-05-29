@@ -2,7 +2,7 @@
 
 namespace Diary
 {
-    class Reminder
+    public class Reminder
     {
         protected int id;
         protected string title;

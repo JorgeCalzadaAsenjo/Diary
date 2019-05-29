@@ -1,0 +1,6 @@
+Add:Añadir
+Search:Buscar
+Contact:Contactos
+Calendar:Calendario
+Notes:Notas
+Reminder:Recordatorios

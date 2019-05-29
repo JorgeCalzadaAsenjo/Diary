@@ -1,11 +1,10 @@
-﻿class Help
+﻿namespace Diary
 {
-    public Help()
+    class Help
     {
-    }
+        public Help()
+        {
 
-    public void Run()
-    {
-
+        }
     }
 }

@@ -50,10 +50,10 @@
             this.pictureNotes = new System.Windows.Forms.PictureBox();
             this.pictureContacts = new System.Windows.Forms.PictureBox();
             this.pictureCalendar = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelContactMenu = new System.Windows.Forms.Label();
+            this.labelCalendarMenu = new System.Windows.Forms.Label();
+            this.labelNotesMenu = new System.Windows.Forms.Label();
+            this.labelReminderMenu = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReminders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNotes)).BeginInit();
@@ -211,34 +211,34 @@
             this.pictureCalendar.TabStop = false;
             this.pictureCalendar.Click += new System.EventHandler(this.pictureCalendar_Click);
             // 
-            // label1
+            // labelContactMenu
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.labelContactMenu, "labelContactMenu");
+            this.labelContactMenu.Name = "labelContactMenu";
             // 
-            // label2
+            // labelCalendarMenu
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.labelCalendarMenu, "labelCalendarMenu");
+            this.labelCalendarMenu.Name = "labelCalendarMenu";
             // 
-            // label3
+            // labelNotesMenu
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.labelNotesMenu, "labelNotesMenu");
+            this.labelNotesMenu.Name = "labelNotesMenu";
             // 
-            // label4
+            // labelReminderMenu
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.labelReminderMenu, "labelReminderMenu");
+            this.labelReminderMenu.Name = "labelReminderMenu";
             // 
             // MenuView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelReminderMenu);
+            this.Controls.Add(this.labelNotesMenu);
+            this.Controls.Add(this.labelCalendarMenu);
+            this.Controls.Add(this.labelContactMenu);
             this.Controls.Add(this.pictureReminders);
             this.Controls.Add(this.pictureNotes);
             this.Controls.Add(this.pictureContacts);
@@ -273,10 +273,10 @@
         private System.Windows.Forms.PictureBox pictureContacts;
         private System.Windows.Forms.PictureBox pictureNotes;
         private System.Windows.Forms.PictureBox pictureReminders;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelContactMenu;
+        private System.Windows.Forms.Label labelCalendarMenu;
+        private System.Windows.Forms.Label labelNotesMenu;
+        private System.Windows.Forms.Label labelReminderMenu;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;

@@ -59,6 +59,7 @@
             this.comboBoxLanguaje.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLanguaje.TabIndex = 4;
             this.comboBoxLanguaje.Text = "English";
+            this.comboBoxLanguaje.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguaje_SelectedIndexChanged);
             // 
             // label1
             // 

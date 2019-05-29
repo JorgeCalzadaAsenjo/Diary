@@ -73,6 +73,16 @@ namespace Diary.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconoContact {
+            get {
+                object obj = ResourceManager.GetObject("iconoContact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconoContacts {
             get {
                 object obj = ResourceManager.GetObject("iconoContacts", resourceCulture);
