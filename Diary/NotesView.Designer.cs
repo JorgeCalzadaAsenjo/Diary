@@ -32,7 +32,7 @@
             this.addNote = new System.Windows.Forms.Button();
             this.editNote = new System.Windows.Forms.Button();
             this.deleteNote = new System.Windows.Forms.Button();
-            this.backToMenu = new System.Windows.Forms.Button();
+            this.buttonLockUnlock = new System.Windows.Forms.Button();
             this.searchNote = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,15 +80,15 @@
             this.deleteNote.UseVisualStyleBackColor = true;
             this.deleteNote.Click += new System.EventHandler(this.deleteNote_Click);
             // 
-            // backToMenu
+            // buttonLockUnlock
             // 
-            this.backToMenu.Location = new System.Drawing.Point(604, 383);
-            this.backToMenu.Name = "backToMenu";
-            this.backToMenu.Size = new System.Drawing.Size(75, 23);
-            this.backToMenu.TabIndex = 4;
-            this.backToMenu.Text = "Back to menu";
-            this.backToMenu.UseVisualStyleBackColor = true;
-            this.backToMenu.Click += new System.EventHandler(this.backToMenu_Click);
+            this.buttonLockUnlock.Location = new System.Drawing.Point(604, 383);
+            this.buttonLockUnlock.Name = "buttonLockUnlock";
+            this.buttonLockUnlock.Size = new System.Drawing.Size(75, 23);
+            this.buttonLockUnlock.TabIndex = 4;
+            this.buttonLockUnlock.Text = "Lock";
+            this.buttonLockUnlock.UseVisualStyleBackColor = true;
+            this.buttonLockUnlock.Click += new System.EventHandler(this.backToMenu_Click);
             // 
             // searchNote
             // 
@@ -143,7 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.searchNote);
-            this.Controls.Add(this.backToMenu);
+            this.Controls.Add(this.buttonLockUnlock);
             this.Controls.Add(this.deleteNote);
             this.Controls.Add(this.editNote);
             this.Controls.Add(this.addNote);
@@ -167,7 +167,7 @@
         private System.Windows.Forms.Button addNote;
         private System.Windows.Forms.Button editNote;
         private System.Windows.Forms.Button deleteNote;
-        private System.Windows.Forms.Button backToMenu;
+        private System.Windows.Forms.Button buttonLockUnlock;
         private System.Windows.Forms.Button searchNote;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

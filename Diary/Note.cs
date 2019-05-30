@@ -8,20 +8,24 @@ namespace Diary {
         protected string textContent;
         protected DateTime createDate;
         protected DateTime lastModifyDate;
+        protected bool locked;
         protected static int countId = 0;
 
-        public Note(string title, string textContent) :
-            this(countId, title, textContent, DateTime.Now, DateTime.Now)
+        //Creada por usuario
+        public Note(string title, string textContent, bool locked) :
+            this(countId, title, textContent, DateTime.Now, DateTime.Now, locked)
         {
         }
 
-        public Note(int id, string title, string textContent, DateTime createDate, DateTime lastModifyDate)
+        //General y para ficheros
+        public Note(int id, string title, string textContent, DateTime createDate, DateTime lastModifyDate, bool locked)
         {
             setId(id);
             SetTitle(title);
             SetTextContent(textContent);
             setCreateDate(createDate);
             setLastModifyDate(lastModifyDate);
+            setLocked(locked);
         }
 
         public int GetId() { return id; }
@@ -29,6 +33,7 @@ namespace Diary {
         public string GetTextContent() { return textContent; }
         public DateTime GetCreateDate() { return createDate; }
         public DateTime GetLastModifyDate() { return lastModifyDate; }
+        public bool isLocked() { return locked; }
 
         protected void setId(int id)
         {
@@ -51,6 +56,7 @@ namespace Diary {
         protected void setCreateDate(DateTime createDate) { this.createDate = createDate; }
         protected void setLastModifyDate(DateTime lastModifyDate) { this.lastModifyDate = lastModifyDate; }
         protected void modifiedNote() { this.lastModifyDate = DateTime.Now; }
+        public void setLocked(bool locked) { this.locked = locked; }
 
         public override string ToString()
         {

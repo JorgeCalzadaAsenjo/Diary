@@ -9,6 +9,8 @@ namespace Diary
         protected List<Note> notes;
         protected string configFile;
         protected static NotesList getNotesList;
+        protected string password;
+        protected bool locked;
 
         protected NotesList()
         {
@@ -45,7 +47,7 @@ namespace Diary
                         if (line != null)
                         {
                             fields = line.Split(';');
-                            list.Add(new Note(Convert.ToInt32(fields[0]),fields[1],fields[2], Convert.ToDateTime(fields[3]), Convert.ToDateTime(fields[4])));
+                            list.Add(new Note(Convert.ToInt32(fields[0]),fields[1],fields[2], Convert.ToDateTime(fields[3]), Convert.ToDateTime(fields[4]), Convert.ToBoolean(fields[5])));
                         }
                     } while (line != null);
                 }
@@ -115,9 +117,9 @@ namespace Diary
             }
         }
 
-        public Note AddNote(string title, string textContent)
+        public Note AddNote(string title, string textContent, bool locked)
         {
-            Note n = new Note(title, textContent);
+            Note n = new Note(title, textContent, locked);
             notes.Add(n);
             save();
             return n;
@@ -125,8 +127,11 @@ namespace Diary
 
         public void RemoveNote(int index)
         {
-            notes.RemoveAt(index);
-            save();
+            if (!locked)
+            {
+                notes.RemoveAt(index);
+                save();
+            }
         }
 
         public List<Note> SearchNote(string text, string contentText, DateTime? date, bool partial)
@@ -231,6 +236,10 @@ namespace Diary
 
         public List<Note> ShowNotes()
         {
+            if (locked)
+            {
+
+            }
             return notes;
         }
 
@@ -244,6 +253,35 @@ namespace Diary
             notes[index].SetTitle(title);
             notes[index].SetTextContent(textContent);
             save();
+        }
+
+        public bool isLocked() { return locked; }
+
+        public void toggleLock(string password)
+        {
+            if (locked && this.password.Equals(password))
+            {
+                locked = false;
+            }
+            else
+            {
+                locked = true;
+            }
+        }
+
+        public void toggleLock()
+        {
+            this.toggleLock("");
+        }
+
+        public bool ChangePassword(string lastPassword, string newPassword)
+        {
+            if (password.Equals(lastPassword))
+            {
+                password = newPassword;
+                return true;
+            }
+            return false;
         }
 
         public void Export(string rute)

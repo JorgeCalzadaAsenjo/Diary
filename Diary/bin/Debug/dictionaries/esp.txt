@@ -14,6 +14,7 @@ Contact:Contacto
 Event:Evento
 Note:Nota
 Reminder:Recordatorio
+Settings:Ajustes
 Diary help:Ayuda de Diary
 Send comment:Enviar comentario
 Licensing information:Información sobre licencia

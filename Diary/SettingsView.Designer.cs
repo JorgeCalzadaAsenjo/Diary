@@ -52,8 +52,8 @@
             // 
             this.comboBoxLanguaje.FormattingEnabled = true;
             this.comboBoxLanguaje.Items.AddRange(new object[] {
-            "Spanish",
-            "English"});
+            "English",
+            "Spanish"});
             this.comboBoxLanguaje.Location = new System.Drawing.Point(136, 80);
             this.comboBoxLanguaje.Name = "comboBoxLanguaje";
             this.comboBoxLanguaje.Size = new System.Drawing.Size(121, 21);

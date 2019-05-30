@@ -116,5 +116,5 @@ C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.csproj.GenerateResou
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.csproj.CoreCompileInputs.cache
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.exe
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.pdb
-C:\Users\Usuario\Documents\GitHub\Diary\Diary\obj\Debug\Diary.ContactView.resources
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.TextBox.resources
+C:\Users\Usuario\Documents\GitHub\Diary\Diary\obj\Debug\Diary.TextBox.resources
