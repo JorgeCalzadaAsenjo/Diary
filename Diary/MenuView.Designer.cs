@@ -36,8 +36,8 @@
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reminderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +74,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.importToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
@@ -111,15 +111,15 @@
             this.reminderToolStripMenuItem.Name = "reminderToolStripMenuItem";
             resources.ApplyResources(this.reminderToolStripMenuItem, "reminderToolStripMenuItem");
             // 
-            // openToolStripMenuItem
+            // importToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
             // 
-            // closeToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             // 
             // toolsToolStripMenuItem
             // 
@@ -267,8 +267,8 @@
         private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reminderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureCalendar;
         private System.Windows.Forms.PictureBox pictureContacts;
         private System.Windows.Forms.PictureBox pictureNotes;

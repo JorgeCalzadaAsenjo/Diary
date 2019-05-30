@@ -17,7 +17,7 @@ namespace Diary
         protected MenuView()
         {
             InitializeComponent();
-            reload();
+            Load();
         }
 
         public static MenuView GetScreen()
@@ -29,12 +29,34 @@ namespace Diary
             return menuScreen;
         }
 
-        public void reload()
+        public void Load()
         {
-            labelContactMenu.Text = Settings.GetText("Contact");
+            loadText();
+            //TODO: load images and background (when night mode is implemented)
+            //TODO: load scale (when increasing and decreasing the text is implemented)
+        }
+
+        protected void loadText()
+        {
+            labelContactMenu.Text = Settings.GetText("Contacts");
             labelCalendarMenu.Text = Settings.GetText("Calendar");
             labelNotesMenu.Text = Settings.GetText("Notes");
-            labelReminderMenu.Text = Settings.GetText("Reminder");
+            labelReminderMenu.Text = Settings.GetText("Reminders");
+            fileToolStripMenuItem.Text = Settings.GetText("File");
+            toolsToolStripMenuItem.Text = Settings.GetText("Tools");
+            helpToolStripMenuItem.Text = Settings.GetText("Help");
+            newToolStripMenuItem.Text = Settings.GetText("New");
+            importToolStripMenuItem.Text = Settings.GetText("Import");
+            exitToolStripMenuItem.Text = Settings.GetText("Exit");
+            contactToolStripMenuItem.Text = Settings.GetText("Contact");
+            eventToolStripMenuItem.Text = Settings.GetText("Event");
+            noteToolStripMenuItem.Text = Settings.GetText("Note");
+            reminderToolStripMenuItem.Text = Settings.GetText("Reminder");
+            diaryHelpToolStripMenuItem.Text = Settings.GetText("Diary help");
+            sendCommentToolStripMenuItem.Text = Settings.GetText("Send comment");
+            licensingInformationToolStripMenuItem.Text = Settings.GetText("Licensing information");
+            searchForUpdateToolStripMenuItem.Text = Settings.GetText("Search for update");
+            aboutDiaryToolStripMenuItem.Text = Settings.GetText("About Diary");
         }
 
         private void MenuView_FormClosed(object sender, FormClosedEventArgs e)

@@ -122,46 +122,46 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="contactToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="contactToolStripMenuItem.Text" xml:space="preserve">
     <value>Contact</value>
   </data>
   <data name="eventToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="eventToolStripMenuItem.Text" xml:space="preserve">
     <value>Event</value>
   </data>
   <data name="noteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="noteToolStripMenuItem.Text" xml:space="preserve">
     <value>Note</value>
   </data>
   <data name="reminderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="reminderToolStripMenuItem.Text" xml:space="preserve">
     <value>Reminder</value>
   </data>
   <data name="newToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="newToolStripMenuItem.Text" xml:space="preserve">
     <value>New</value>
   </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+  <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
     <value>Import</value>
   </data>
-  <data name="closeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="closeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Close</value>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -649,16 +649,16 @@
   <data name="&gt;&gt;reminderToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openToolStripMenuItem.Name" xml:space="preserve">
-    <value>openToolStripMenuItem</value>
+  <data name="&gt;&gt;importToolStripMenuItem.Name" xml:space="preserve">
+    <value>importToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;openToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;importToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;closeToolStripMenuItem.Name" xml:space="preserve">
-    <value>closeToolStripMenuItem</value>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;closeToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolsToolStripMenuItem.Name" xml:space="preserve">

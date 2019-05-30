@@ -12,7 +12,7 @@ namespace Diary
 
         protected Calendar()
         {
-            configFile = Diary.ConfigFiles.Calendar;
+            configFile = Settings.ConfigFiles.Calendar;
             events = load();
         }
 

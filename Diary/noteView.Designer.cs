@@ -30,7 +30,7 @@
         {
             this.titleNote = new System.Windows.Forms.TextBox();
             this.contentTextNote = new System.Windows.Forms.TextBox();
-            this.saveNote = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.cancelNote = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,15 +54,15 @@
             this.contentTextNote.Enter += new System.EventHandler(this.contentTextNote_Enter);
             this.contentTextNote.Leave += new System.EventHandler(this.contentTextNote_Leave);
             // 
-            // saveNote
+            // buttonSave
             // 
-            this.saveNote.Location = new System.Drawing.Point(144, 398);
-            this.saveNote.Name = "saveNote";
-            this.saveNote.Size = new System.Drawing.Size(75, 23);
-            this.saveNote.TabIndex = 2;
-            this.saveNote.Text = "Save";
-            this.saveNote.UseVisualStyleBackColor = true;
-            this.saveNote.Click += new System.EventHandler(this.saveNote_Click);
+            this.buttonSave.Location = new System.Drawing.Point(144, 398);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // cancelNote
             // 
@@ -74,16 +74,16 @@
             this.cancelNote.UseVisualStyleBackColor = true;
             this.cancelNote.Click += new System.EventHandler(this.cancelNote_Click);
             // 
-            // noteView
+            // NoteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cancelNote);
-            this.Controls.Add(this.saveNote);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.contentTextNote);
             this.Controls.Add(this.titleNote);
-            this.Name = "noteView";
+            this.Name = "NoteView";
             this.Text = "noteView";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.noteView_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.noteView_FormClosed);
@@ -96,7 +96,7 @@
 
         private System.Windows.Forms.TextBox titleNote;
         private System.Windows.Forms.TextBox contentTextNote;
-        private System.Windows.Forms.Button saveNote;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button cancelNote;
     }
 }

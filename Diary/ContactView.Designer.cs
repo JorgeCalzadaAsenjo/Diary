@@ -1,6 +1,6 @@
 ﻿namespace Diary
 {
-    partial class ContactView
+    partial class TextBox
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.button2Cancel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(168, 239);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxName.Location = new System.Drawing.Point(168, 239);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(260, 20);
+            this.textBoxName.TabIndex = 0;
+            this.textBoxName.Leave += new System.EventHandler(this.textBoxName_Leave);
             // 
-            // textBox2
+            // textBoxSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(168, 292);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBoxSurname.Location = new System.Drawing.Point(168, 292);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(260, 20);
+            this.textBoxSurname.TabIndex = 1;
             // 
             // label1
             // 
@@ -81,30 +85,32 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Phone number";
             // 
-            // textBox3
+            // textBoxPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(168, 354);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 20);
-            this.textBox3.TabIndex = 4;
+            this.textBoxPhone.Location = new System.Drawing.Point(168, 354);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(260, 20);
+            this.textBoxPhone.TabIndex = 4;
+            this.textBoxPhone.Leave += new System.EventHandler(this.textBoxPhone_Leave);
             // 
-            // button1
+            // buttonSave
             // 
-            this.button1.Location = new System.Drawing.Point(97, 433);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSave.Location = new System.Drawing.Point(97, 433);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // button2
+            // button2Cancel
             // 
-            this.button2.Location = new System.Drawing.Point(310, 433);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2Cancel.Location = new System.Drawing.Point(310, 433);
+            this.button2Cancel.Name = "button2Cancel";
+            this.button2Cancel.Size = new System.Drawing.Size(75, 23);
+            this.button2Cancel.TabIndex = 7;
+            this.button2Cancel.Text = "Cancel";
+            this.button2Cancel.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -115,23 +121,28 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // ContactView
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // TextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 496);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2Cancel);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Name = "ContactView";
+            this.Controls.Add(this.textBoxSurname);
+            this.Controls.Add(this.textBoxName);
+            this.Name = "TextBox";
             this.Text = "ContactView";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,14 +150,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button button2Cancel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

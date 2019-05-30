@@ -1,6 +1,21 @@
 Add:Añadir
 Search:Buscar
-Contact:Contactos
+Contacts:Contactos
 Calendar:Calendario
 Notes:Notas
-Reminder:Recordatorios
+Reminders:Recordatorios
+File:Archivo
+Tools:Herramientas
+Help:Ayuda
+New:Nuevo
+Import:Importar
+Exit:Salir
+Contact:Contacto
+Event:Evento
+Note:Nota
+Reminder:Recordatorio
+Diary help:Ayuda de Diary
+Send comment:Enviar comentario
+Licensing information:Información sobre licencia
+Search for update:Buscar actualizaciones
+About Diary:Sobre Diary

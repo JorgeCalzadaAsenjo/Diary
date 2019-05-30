@@ -4,34 +4,43 @@ using System.IO;
 
 namespace Diary
 {
-    class Settings
+    public struct Files
     {
-        protected static Settings getSettings;
-        protected string configFile;
-        protected static string dictionaries;
-        protected static string languaje = "eng";
-        protected static Dictionary<string, string> dictionary;
+        public readonly string ContactsList;
+        public readonly string Calendar;
+        public readonly string NotesList;
+        public readonly string Reminders;
+        public readonly string Settings;
+        public readonly string Dictionaries;
+        public readonly string Help;
 
-        protected Settings()
+        public Files(string contactsList, string calendar, string notesList, string reminders, string settings, string dictionaries, string help)
         {
-            configFile = Diary.ConfigFiles.Settings;
-            dictionaries = Diary.ConfigFiles.Dictionaries;
-            load();
-            loadDictionary();
+            ContactsList = contactsList;
+            Calendar = calendar;
+            NotesList = notesList;
+            Reminders = reminders;
+            Settings = settings;
+            Dictionaries = dictionaries;
+            Help = help;
+        }
+    }
+
+    static class Settings
+    {
+        public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, "settings.txt", "dictionaries", null);
+        private static string configFile = ConfigFiles.Settings;
+        private static string dictionaries = ConfigFiles.Dictionaries;
+        private static string languaje = "eng";
+        private static Dictionary<string, string> dictionary;
+
+        public static void Load()
+        {
+            loadSettings();
             dictionary = loadDictionary();
         }
 
-        public static Settings GetSettings()
-        {
-            if (getSettings == null)
-            {
-                getSettings = new Settings();
-            }
-
-            return getSettings;
-        }
-
-        private void load()
+        private static void loadSettings()
         {
             List<Event> list = new List<Event>();
             StreamReader reader = null;
@@ -76,7 +85,7 @@ namespace Diary
             }
         }
 
-        protected void save()
+        private static void save()
         {
             StreamWriter writer = null;
             bool correctSave = false;
@@ -123,7 +132,7 @@ namespace Diary
             }
         }
 
-        protected Dictionary<string, string> loadDictionary()
+        private static Dictionary<string, string> loadDictionary()
         {
             if (languaje != "eng")
             {
@@ -183,10 +192,24 @@ namespace Diary
 
         public static string GetLanguaje() { return languaje; }
 
-        public void SetLanguaje(string newLanguaje)
+        public static void SetLanguaje(int codeLanguaje)
         {
-            languaje = newLanguaje;
+            switch (codeLanguaje)
+            {
+                case 1:
+                    languaje = "esp";
+                    break;
+                default:
+                    languaje = "eng";
+                    break;
+            }
             dictionary = loadDictionary();
+            loadAll();
+        }
+
+        private static void loadAll()
+        {
+            MenuView.GetScreen().Load();
         }
     }
 }

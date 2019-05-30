@@ -12,7 +12,7 @@ namespace Diary
 
         protected ContactsList()
         {
-            configFile = Diary.ConfigFiles.ContactsList;
+            configFile = Settings.ConfigFiles.ContactsList;
             contacts = load();
         }
 
@@ -45,7 +45,7 @@ namespace Diary
                         if (line != null)
                         {
                             fields = line.Split(';');
-                            //list.Add(new Contact());
+                            list.Add(new Contact(Convert.ToInt32(fields[0]), fields[1], fields[2], fields[3]));
                         }
                     } while (line != null);
                 }
@@ -83,14 +83,14 @@ namespace Diary
 
                 for (int i = 0; i < contacts.Count; i++)
                 {
-                    writer.WriteLine(contacts[i]);
+                    writer.WriteLine(contacts[i].GetId() + ";" + contacts[i].GetName() + ";" + contacts[i].GetSurname() + ";" + contacts[i].GetPhone());
                 }
 
                 correctSave = true;
             }
             catch (System.Exception)
             {
-                Console.WriteLine("Error en escritura en fichero de notas");
+                Console.WriteLine("Error en escritura en fichero de contactos");
             }
             finally
             {
@@ -104,7 +104,6 @@ namespace Diary
             {
                 try
                 {
-
                     File.Delete(configFile);
                     File.Move("~" + configFile, configFile);
                 }
@@ -115,15 +114,15 @@ namespace Diary
             }
         }
 
-        private Contact AddContact(string name, string phone)
+        public Contact AddContact(string name, string surname, string phone)
         {
-            Contact c = new Contact(name, phone);
+            Contact c = new Contact(name, surname, phone);
             contacts.Add(c);
             save();
             return c;
         }
 
-        private void RemoveContact(int index)
+        public void RemoveContact(int index)
         {
             contacts.RemoveAt(index);
             save();
@@ -139,7 +138,7 @@ namespace Diary
 
         }*/
 
-        private bool searchField(string value1, string value2, bool partial)
+        public bool searchField(string value1, string value2, bool partial)
         {
             if (partial)
             {
@@ -168,9 +167,10 @@ namespace Diary
             return contacts[index];
         }
 
-        public void ModifyNote(int index, string name, string phone)
+        public void ModifyContact(int index, string name, string surname, string phone)
         {
             contacts[index].SetName(name);
+            contacts[index].SetSurname(surname);
             contacts[index].SetPhone(phone);
             save();
         }

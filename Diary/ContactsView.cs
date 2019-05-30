@@ -25,6 +25,7 @@ namespace Diary
                 string[] arr = { c.GetName(), c.GetPhone()};
                 listViewContacts.Items.Add(new ListViewItem());
             }*/
+            reload();
         }
 
         public static ContactsView GetScreen()
@@ -36,6 +37,18 @@ namespace Diary
             return contactsScreen;
         }
 
+        public void reload()
+        {
+            foreach (Contact c in ContactsList.GetContactsList().ShowContacts())
+            {
+                string[] arr = new string[2];
+                arr[0] = c.GetName() + " " + c.GetSurname();
+                arr[1] = c.GetPhone();
+                ListViewItem itm = new ListViewItem(arr);
+                listViewContacts.Items.Add(itm);
+            }
+        }
+
         private void ContactsView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MenuView.GetScreen().Show();
@@ -45,13 +58,18 @@ namespace Diary
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            ContactView newContact = new ContactView();
+            TextBox newContact = new TextBox();
             newContact.ShowDialog();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            /*if (listViewContacts.)
+            {
 
+            }
+            ContactView newContact = new ContactView();
+            newContact.ShowDialog();*/
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)

@@ -36,16 +36,9 @@ namespace Diary
             settingsScreen = null;
         }
 
-        private void reloadAll()
-        {
-            MenuView.GetScreen().reload();
-        }
-
         private void comboBoxLanguaje_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedLanguaje = comboBoxLanguaje.SelectedItem.ToString();
-            Settings.GetSettings().SetLanguaje("esp");
-            reloadAll();
+            Settings.SetLanguaje(comboBoxLanguaje.SelectedIndex);
         }
     }
 }

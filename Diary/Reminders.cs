@@ -12,7 +12,7 @@ namespace Diary
 
         protected Reminders()
         {
-            configFile = Diary.ConfigFiles.Reminders;
+            configFile = Settings.ConfigFiles.Reminders;
             reminders = load();
         }
 

@@ -29,12 +29,12 @@ namespace Diary
         {
             InitializeComponent();
             this.note = note;
+            type = 1;
             titleNote.Text = note.GetTitle();
             contentTextNote.Text = note.GetTextContent();
-            type = 1;
         }
 
-        private void saveNote_Click(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
             string title = !titleNote.Text.Equals("Enter a title ") ? titleNote.Text : "";
             string content = contentTextNote.Text.Equals("Enter a text ") ? contentTextNote.Text : "";

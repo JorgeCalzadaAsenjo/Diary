@@ -12,7 +12,7 @@ namespace Diary
 
         protected NotesList()
         {
-            configFile = Diary.ConfigFiles.NotesList;
+            configFile = Settings.ConfigFiles.NotesList;
             notes = load();
         }
 
