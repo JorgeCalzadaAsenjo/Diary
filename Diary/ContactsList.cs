@@ -45,13 +45,15 @@ namespace Diary
                         if (line != null)
                         {
                             fields = line.Split(';');
-                            list.Add(new Contact(Convert.ToInt32(fields[0]), fields[1], fields[2], fields[3]));
+                            list.Add(new Contact(Convert.ToInt32(fields[0]), 
+                                fields[1], fields[2], fields[3]));
                         }
                     } while (line != null);
                 }
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Error en lectura de fichero de Contactos");
+                    Console.WriteLine("Error en lectura de fichero de " +
+                        "Contactos");
                 }
                 finally
                 {

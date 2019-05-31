@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diary
@@ -33,7 +26,8 @@ namespace Diary
         {
             loadText();
             //TODO: load images and background (when night mode is implemented)
-            //TODO: load scale (when increasing and decreasing the text is implemented)
+            //TODO: load scale (when increasing and decreasing the text is 
+            //  implemented)
         }
 
         protected void loadText()
@@ -54,9 +48,12 @@ namespace Diary
             reminderToolStripMenuItem.Text = Settings.GetText("Reminder");
             settingsToolStripMenuItem.Text = Settings.GetText("Settings");
             diaryHelpToolStripMenuItem.Text = Settings.GetText("Diary help");
-            sendCommentToolStripMenuItem.Text = Settings.GetText("Send comment");
-            licensingInformationToolStripMenuItem.Text = Settings.GetText("Licensing information");
-            searchForUpdateToolStripMenuItem.Text = Settings.GetText("Search for update");
+            sendCommentToolStripMenuItem.Text = 
+                Settings.GetText("Send comment");
+            licensingInformationToolStripMenuItem.Text = 
+                Settings.GetText("Licensing information");
+            searchForUpdateToolStripMenuItem.Text = 
+                Settings.GetText("Search for update");
             aboutDiaryToolStripMenuItem.Text = Settings.GetText("About Diary");
         }
 
@@ -89,24 +86,28 @@ namespace Diary
             this.Hide();
         }
 
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void settingsToolStripMenuItem_Click(object sender, 
+            EventArgs e)
         {
             SettingsView.GetScreen().Show();
             this.Hide();
         }
 
-        private void diaryHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void diaryHelpToolStripMenuItem_Click(object sender, 
+            EventArgs e)
         {
             HelpView.GetScreen().Show();
             this.Hide();
         }
 
-        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        private void contactToolStripMenuItem_Click(object sender, 
+            EventArgs e)
         {
             //TODO
         }
 
-        private void eventToolStripMenuItem_Click(object sender, EventArgs e)
+        private void eventToolStripMenuItem_Click(object sender, 
+            EventArgs e)
         {
             //TODO
         }

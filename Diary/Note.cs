@@ -14,12 +14,14 @@ namespace Diary {
 
         //Creada por usuario
         public Note(string title, string textContent, bool locked) :
-            this(countId, title, textContent, DateTime.Now, DateTime.Now, locked)
+            this(countId, title, textContent, DateTime.Now, DateTime.Now, 
+                locked)
         {
         }
 
         //General y para ficheros
-        public Note(int id, string title, string textContent, DateTime createDate, DateTime lastModifyDate, bool locked)
+        public Note(int id, string title, string textContent, 
+            DateTime createDate, DateTime lastModifyDate, bool locked)
         {
             setId(id);
             SetTitle(title);
@@ -30,7 +32,8 @@ namespace Diary {
         }
 
         //notas temporales
-        public Note(string title, string textContent, DateTime createDate, DateTime lastModifyDate, int reference)
+        public Note(string title, string textContent, DateTime createDate, 
+            DateTime lastModifyDate, int reference)
         {
             this.id = -1;
             SetTitle(title);
@@ -75,15 +78,18 @@ namespace Diary {
             modifiedNote();
         }
 
-        protected void setCreateDate(DateTime createDate) { this.createDate = createDate; }
-        protected void setLastModifyDate(DateTime lastModifyDate) { this.lastModifyDate = lastModifyDate; }
+        protected void setCreateDate(DateTime createDate)
+            { this.createDate = createDate; }
+        protected void setLastModifyDate(DateTime lastModifyDate)
+            { this.lastModifyDate = lastModifyDate; }
         protected void modifiedNote() { this.lastModifyDate = DateTime.Now; }
         public void setLocked(bool locked) { this.locked = locked; }
         public void setReference(int reference) { this.reference = reference; }
 
         public override string ToString()
         {
-            return id + ";" + title + ";" + textContent + ";" + createDate + ";" + lastModifyDate;
+            return id + ";" + title + ";" + textContent + ";" + createDate + 
+                ";" + lastModifyDate;
         }
     }
 }

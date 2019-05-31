@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Diary
+﻿namespace Diary
 {
     public class Contact
     {

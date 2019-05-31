@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Diary.Calendar">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAICAAhFAIAAABAAAEAAAAEIAAABAAAAICAA=</HashCode>
+      <FileName>Calendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.CalendarView">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIABACABAAAAAACAAAACAAEAAAAAEEAAAAAAAAA=</HashCode>
+      <FileName>CalendarView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Contact">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAEACAEAAAAAAAEAgBgBAAAQAIABgA=</HashCode>
+      <FileName>Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.ContactsList">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQBDICAABAAIAAABAAAAACAEAAAgAAAAABIBAA=</HashCode>
+      <FileName>ContactsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.ContactsView">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BYDAgKAQECBEIgAAAAqAARECAABaAAAAA0BCgAIAABA=</HashCode>
+      <FileName>ContactsView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.TextBox">
+    <Position X="6.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAgIAAACAAAkAEAAjAFAgCAAABAABAIAAAAABAACA=</HashCode>
+      <FileName>ContactView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Diary">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Diary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Event">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAEQAEAIAAAAAAAAAAAEAAAAQBAAAAAAQIAAgA=</HashCode>
+      <FileName>Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.EventView">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.HelpView">
+    <Position X="8.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgIAAACAAAAAAAACAAAACBAAAAAAAEEAAAAAAAAA=</HashCode>
+      <FileName>HelpView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.InputPassword">
+    <Position X="10" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBAgIAAACAIAAIAAAKABAAKEAQAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>InputPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.MenuView">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DcCAgIAABSAELAAAACKCQQECACBCIAEAA0ABBIIBABE=</HashCode>
+      <FileName>MenuView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Note">
+    <Position X="4.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAgoAAUACABgAAAAAIAAIBAiAAAAAMBGgg=</HashCode>
+      <FileName>Note.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.NotesList">
+    <Position X="6.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAAAAICAoDEAIAAgBAAAEACAAAAAAAgAAgAIIAg=</HashCode>
+      <FileName>NotesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.NotesView">
+    <Position X="8.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwBEgIAAACAAAgAABACAAAACAAAJgAAIAkACAAIAAIA=</HashCode>
+      <FileName>NotesView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.NoteView">
+    <Position X="10" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwAAgIEAACAAAAKACgDABADDAAABEACIIAAAAAAEBAA=</HashCode>
+      <FileName>NoteView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Reminder">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAAAAAAICACAAAAAAAAAABAAAAAAAIAAgA=</HashCode>
+      <FileName>Reminder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.ReminderDate">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ReminderDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Reminders">
+    <Position X="3" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAICAAAAAAAAAAgAAAAIAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Reminders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.RemindersView">
+    <Position X="4.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQBAgKAAACAAAgAEAACAAAACAgAQAAAAAMACAAIAAAA=</HashCode>
+      <FileName>RemindersView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.ReminderView">
+    <Position X="6.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReminderView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Settings">
+    <Position X="10" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAgACAEAAIAAAQAAEGACAAAAAAAAAAAQAIAAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.SettingsView">
+    <Position X="4.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoIAAACABEAABCACAAAACAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>SettingsView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Properties.Resources">
+    <Position X="8.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABCAAABAAAAAAAAJEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diary.Properties.Settings">
+    <Position X="3" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Diary.Files">
+    <Position X="3" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAIAAAAAAAAAAAAAAQAAgAEgAAAAAAAAAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

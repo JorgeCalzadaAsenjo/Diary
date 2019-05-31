@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diary
@@ -42,7 +35,8 @@ namespace Diary
         {
             loadText();
             //TODO: load images and background (when night mode is implemented)
-            //TODO: load scale (when increasing and decreasing the text is implemented)
+            //TODO: load scale (when increasing and decreasing the text is 
+            //  implemented)
         }
 
         protected void loadText()
@@ -56,10 +50,14 @@ namespace Diary
             exitToolStripMenuItem.Text = Settings.GetText("Exit");
             settingsToolStripMenuItem.Text = Settings.GetText("Settings");
             diaryHelpToolStripMenuItem.Text = Settings.GetText("Diary help");
-            sendCommentToolStripMenuItem.Text = Settings.GetText("Send comment");
-            licensingInformationToolStripMenuItem.Text = Settings.GetText("Licensing information");
-            searchForUpdateToolStripMenuItem.Text = Settings.GetText("Search for update");
-            aboutDiaryToolStripMenuItem.Text = Settings.GetText("About Diary");
+            sendCommentToolStripMenuItem.Text = 
+                Settings.GetText("Send comment");
+            licensingInformationToolStripMenuItem.Text = 
+                Settings.GetText("Licensing information");
+            searchForUpdateToolStripMenuItem.Text = 
+                Settings.GetText("Search for update");
+            aboutDiaryToolStripMenuItem.Text = 
+                Settings.GetText("About Diary");
             buttonNew.Text = Settings.GetText("New");
             buttonEdit.Text = Settings.GetText("Edit");
             buttonRemove.Text = Settings.GetText("Remove");
@@ -81,7 +79,8 @@ namespace Diary
             }
         }
 
-        private void ContactsView_FormClosed(object sender, FormClosedEventArgs e)
+        private void ContactsView_FormClosed(object sender, 
+            FormClosedEventArgs e)
         {
             MenuView.GetScreen().Show();
             this.Hide();

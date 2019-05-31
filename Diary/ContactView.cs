@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diary
@@ -34,7 +27,8 @@ namespace Diary
         {
             loadText();
             //TODO: load images and background (when night mode is implemented)
-            //TODO: load scale (when increasing and decreasing the text is implemented)
+            //TODO: load scale (when increasing and decreasing the text is
+            //  implemented)
         }
 
         protected void loadText()
@@ -51,11 +45,13 @@ namespace Diary
         {
             if (type == 0)
             {
-                this.contact = ContactsList.GetContactsList().AddContact(textBoxName.Text, textBoxSurname.Text, textBoxPhone.Text);
+                this.contact = ContactsList.GetContactsList().AddContact(
+                    textBoxName.Text, textBoxSurname.Text, textBoxPhone.Text);
             }
             else if (type == 1)
             {
-                ContactsList.GetContactsList().ModifyContact(contact.GetId(), textBoxName.Text, textBoxSurname.Text, textBoxPhone.Text);
+                ContactsList.GetContactsList().ModifyContact(contact.GetId(), 
+                    textBoxName.Text, textBoxSurname.Text, textBoxPhone.Text);
             }
 
             ContactsView.GetScreen().reload();
@@ -65,7 +61,8 @@ namespace Diary
         {
             if (textBoxName.Text.Trim() == string.Empty)
             {
-                errorProvider1.SetError(textBoxName, Settings.GetText("This field cannot be empty"));
+                errorProvider1.SetError(textBoxName, Settings.GetText("This " +
+                    "field cannot be empty"));
             }
             else
             {
@@ -78,11 +75,13 @@ namespace Diary
             Regex r = new Regex(@"\A(\+34)?(6|7|9)[0-9]{8}\z");
             if (textBoxPhone.Text.Trim() == string.Empty)
             {
-                errorProvider1.SetError(textBoxPhone, Settings.GetText("This field cannot be empty"));
+                errorProvider1.SetError(textBoxPhone, Settings.GetText("This" +
+                    " field cannot be empty"));
             }
             else if (!r.IsMatch(textBoxPhone.Text))
             {
-                errorProvider1.SetError(textBoxPhone, Settings.GetText("This field does not have a valid format"));
+                errorProvider1.SetError(textBoxPhone, Settings.GetText("This" +
+                    " field does not have a valid format"));
             }
             else
             {

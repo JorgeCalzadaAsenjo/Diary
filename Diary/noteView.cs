@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diary
@@ -42,7 +36,8 @@ namespace Diary
         {
             loadText();
             //TODO: load images and background (when night mode is implemented)
-            //TODO: load scale (when increasing and decreasing the text is implemented)
+            //TODO: load scale (when increasing and decreasing the text is 
+            //  implemented)
         }
 
         protected void loadText()
@@ -58,17 +53,21 @@ namespace Diary
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string title = !titleNote.Text.Equals(placeholderTitle) ? titleNote.Text : "";
-            string content = contentTextNote.Text.Equals(placeholderBody) ? contentTextNote.Text : "";
+            string title = !titleNote.Text.Equals(placeholderTitle) ? 
+                titleNote.Text : "";
+            string content = contentTextNote.Text.Equals(placeholderBody) ? 
+                contentTextNote.Text : "";
 
 
             if (type == 0)
             {
-                this.note = NotesList.GetNotesList().AddNote(title, content,false);
+                this.note = NotesList.GetNotesList().AddNote(title, content,
+                    false);
             }
             else if (type == 1)
             {
-                NotesList.GetNotesList().ModifyNote(note.GetId(), title, content);
+                NotesList.GetNotesList().ModifyNote(note.GetId(), title, 
+                    content);
             }
 
             NotesView.GetScreen().reload();
@@ -84,21 +83,31 @@ namespace Diary
             NotesView.GetScreen().reload();
         }
 
-        private void noteView_FormClosing(object sender, FormClosingEventArgs e)
+        private void noteView_FormClosing(object sender, 
+            FormClosingEventArgs e)
         {
-            if ((note == null && ((!titleNote.Text.Equals("") && (!titleNote.Text.Equals(placeholderTitle)) || (!contentTextNote.Text.Equals("")) && !contentTextNote.Text.Equals(placeholderBody))) || (note != null && (!note.GetTitle().Equals(titleNote.Text) || !note.GetTextContent().Equals(contentTextNote.Text)))))
+            if ((note == null && ((!titleNote.Text.Equals("") && 
+                (!titleNote.Text.Equals(placeholderTitle)) || 
+                (!contentTextNote.Text.Equals("")) && 
+                !contentTextNote.Text.Equals(placeholderBody))) || 
+                (note != null && (!note.GetTitle().Equals(titleNote.Text) || 
+                !note.GetTextContent().Equals(contentTextNote.Text)))))
             {
-                DialogResult confirmResult = MessageBox.Show(Settings.GetText("Save before you leave?"), Settings.GetText("Confirm"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult confirmResult = MessageBox.Show(Settings.GetText(
+                    "Save before you leave?"), Settings.GetText("Confirm"), 
+                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
                 if (confirmResult == DialogResult.Yes)
                 {
                     if (type == 0)
                     {
-                        this.note = NotesList.GetNotesList().AddNote(titleNote.Text, contentTextNote.Text,false);
+                        this.note = NotesList.GetNotesList().AddNote(
+                            titleNote.Text, contentTextNote.Text,false);
                     }
                     else if (type == 1)
                     {
-                        NotesList.GetNotesList().ModifyNote(note.GetId(), titleNote.Text, contentTextNote.Text);
+                        NotesList.GetNotesList().ModifyNote(note.GetId(), 
+                            titleNote.Text, contentTextNote.Text);
                     }
 
                     NotesView.GetScreen().reload();

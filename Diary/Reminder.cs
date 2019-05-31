@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Diary
+﻿namespace Diary
 {
     public class Reminder
     {
@@ -33,7 +31,8 @@ namespace Diary
             countId = ++id;
         }
         public void SetTitle(string title) { this.title = title; }
-        public void SetDescription(string description) { this.description = description; }
+        public void SetDescription(string description) { this.description = 
+                description; }
         
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diary
@@ -36,7 +29,8 @@ namespace Diary
         {
             loadText();
             //TODO: load images and background (when night mode is implemented)
-            //TODO: load scale (when increasing and decreasing the text is implemented)
+            //TODO: load scale (when increasing and decreasing the text is 
+            //  implemented)
         }
 
         protected void loadText()
@@ -49,7 +43,8 @@ namespace Diary
             buttonEdit.Text = Settings.GetText("Edit");
             buttonRemove.Text = Settings.GetText("Remove");
             buttonSearch.Text = Settings.GetText("Search");
-            buttonLockUnlock.Text = NotesList.GetNotesList().isLocked() ? Settings.GetText("Unlock") : Settings.GetText("Lock");
+            buttonLockUnlock.Text = NotesList.GetNotesList().isLocked() ? 
+                Settings.GetText("Unlock") : Settings.GetText("Lock");
         }
 
         private void NotesView_FormClosed(object sender, FormClosedEventArgs e)
@@ -76,7 +71,8 @@ namespace Diary
         {
             if (listBoxNotes.SelectedIndex != -1)
             {
-                NoteView editNote = new NoteView((Note)listBoxNotes.SelectedItem);
+                NoteView editNote = 
+                    new NoteView((Note)listBoxNotes.SelectedItem);
                 editNote.ShowDialog();
             }
         }
@@ -93,11 +89,17 @@ namespace Diary
             this.Hide();
         }
 
-        private void buttonUnlock_enterPasswrod_click(object sender, EventArgs e)
+        private void buttonUnlock_enterPasswrod_click(object sender, 
+            EventArgs e)
         {
-            if (NotesList.GetNotesList().isLocked() && !NotesList.GetNotesList().toggleLock(InputPassword.GetInputPassword().textBoxPasswd.Text))
+            if (NotesList.GetNotesList().isLocked() && 
+                !NotesList.GetNotesList().toggleLock(
+                    InputPassword.GetInputPassword().textBoxPasswd.Text))
             {
-                MessageBox.Show(Settings.GetText("The password you entered is invalid. Try again to unlock notes."), Settings.GetText("Wrong password"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Settings.GetText("The password you entered " +
+                    "is invalid. Try again to unlock notes."), 
+                    Settings.GetText("Wrong password"), MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
             else
             {
@@ -114,7 +116,8 @@ namespace Diary
             {
                 InputPassword enterPasswd = InputPassword.GetInputPassword();
                 enterPasswd.Show();
-                enterPasswd.buttonUnlock.Click += new EventHandler(buttonUnlock_enterPasswrod_click);
+                enterPasswd.buttonUnlock.Click += new EventHandler(
+                    buttonUnlock_enterPasswrod_click);
             }
             else
             {

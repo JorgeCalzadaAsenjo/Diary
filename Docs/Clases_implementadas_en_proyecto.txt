@@ -1,0 +1,346 @@
+Calendar
+	protected List<Event> events;
+        protected string configFile;
+        protected static Calendar getCalendar;
+
+        protected Calendar()
+        public static Calendar GetCalendar()
+        protected List<Event> load()
+        protected void save()
+        public Event AddEvent(string title, DateTime date, string note)
+        public void RemoveEvent(int position)
+        public List<Event> SearchEvent(string title, DateTime? date, string note, bool partial)
+        public List<Event> SearchEvent(string search, bool partial)
+        private bool searchField(string value1, string value2, bool partial)
+        public List<Event> GetEvents()
+        public Event GetEvent(int index)
+        public void ModifyEvents()
+        public void Export(string rute)
+        public void Import(string rute)
+
+CalendarView : Form
+	protected static CalendarView calendarScreen;
+
+        protected CalendarView()
+        public static CalendarView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void CalendarView_FormClosed(object sender, FormClosedEventArgs e)
+
+Contact
+        protected int id;
+        protected string name;
+        protected string surname;
+        protected string phone;
+        protected static int countId = 0;
+
+        public Contact(int id, string name, string surname, string phone)
+        public Contact(string name, string surname, string phone) :
+        public int GetId()
+        public string GetName()
+        public string GetSurname()
+        public string GetPhone()
+        protected void setId(int id)
+        public void SetName(string name)
+        public void SetSurname(string surname)
+        public void SetPhone(string phone)
+        public override string ToString()
+
+ContactsList
+        protected List<Contact> contacts;
+        protected string configFile;
+        protected static ContactsList getContactsList;
+
+        protected ContactsList()
+        public static ContactsList GetContactsList()
+        protected List<Contact> load()
+        protected void save()
+        public Contact AddContact(string name, string surname, string phone)
+        public void RemoveContact(int index)
+        public List<Contact> SearchContact()
+        public List<Contact> SearchContactAll()
+        public bool searchField(string value1, string value2, bool partial)
+        public List<Contact> GetContacts()
+        public Contact GetContact(int index)
+        public void ModifyContact(int index, string name, string surname, string phone)
+        public void Export(string rute)
+        public void Import(string rute)
+
+ContactsView : Form
+        protected static ContactsView contactsScreen;
+
+        protected ContactsView()
+        public static ContactsView GetScreen()
+        public void Load()
+        protected void loadText()
+        public void reload()
+        private void ContactsView_FormClosed(object sender, FormClosedEventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
+        private void buttonEdit_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e)
+        private void buttonSearchAll_Click(object sender, EventArgs e)
+
+ContactView : Form
+        protected int type;
+        protected Contact contact;
+
+        public TextBox()
+        public TextBox(Contact contact)
+        public void Load()
+        protected void loadText()
+        private void buttonSave_Click(object sender, EventArgs e)
+        private void textBoxName_Leave(object sender, EventArgs e)
+        private void textBoxPhone_Leave(object sender, EventArgs e)
+
+Diary
+	static void Main
+
+Event
+        protected int id;
+        protected string title;
+        protected DateTime date;
+        protected string note;
+        public static int countId = 0;
+
+        public Event(string title, DateTime date, string note)
+        public int GetId()
+        public string GetTitle()
+        public DateTime GetDate()
+        public string GetNote()
+        public void SetId(int id)
+        public void SetTitle(string title)
+        public void SetDate(DateTime date)
+        public void SetNote(string note)
+
+EventView : Form
+        public EventView()
+        public void Load()
+        protected void loadText()
+
+HelpView : Form
+        protected static HelpView helpScreen;
+
+        protected HelpView()
+        public static HelpView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void HelpView_FormClosed(object sender, FormClosedEventArgs e)
+
+InputPassword : Form
+        protected static InputPassword inputPassword;
+
+        protected InputPassword()
+        public static InputPassword GetInputPassword()
+        public void Load()
+        protected void loadText()
+        private void checkBoxShowPasswd_CheckedChanged(object sender, EventArgs e)
+        private void InputPassword_FormClosed(object sender, FormClosedEventArgs e)
+        private void buttonCancel_Click(object sender, EventArgs e)
+
+MenuView : Form
+        protected static MenuView menuScreen;
+
+        protected MenuView()
+        public static MenuView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void MenuView_FormClosed(object sender, FormClosedEventArgs e)
+        private void pictureContacts_Click(object sender, EventArgs e)
+        private void pictureCalendar_Click(object sender, EventArgs e)
+        private void pictureNotes_Click(object sender, EventArgs e)
+        private void pictureReminders_Click(object sender, EventArgs e)
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void diaryHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        private void eventToolStripMenuItem_Click(object sender, EventArgs e)
+
+Note
+	protected int id;
+        protected string title;
+        protected string textContent;
+        protected DateTime createDate;
+        protected DateTime lastModifyDate;
+        protected bool locked;
+        protected int reference;
+        protected static int countId = 0;
+
+        public Note(string title, string textContent, bool locked) :
+        public Note(int id, string title, string textContent, DateTime createDate, DateTime lastModifyDate, bool locked)
+        public Note(string title, string textContent, DateTime createDate, DateTime lastModifyDate, int reference)
+        public int GetId()
+        public string GetTitle()
+        public string GetTextContent()
+        public DateTime GetCreateDate()
+        public DateTime GetLastModifyDate()
+        public bool isLocked()
+        public int getReference()
+        protected void setId(int id)
+        public void SetTitle(string title)
+        public void SetTextContent(string textContent)
+        protected void setCreateDate(DateTime createDate)
+        protected void setLastModifyDate(DateTime lastModifyDate)
+        protected void modifiedNote()
+        public void setLocked(bool locked)
+        public void setReference(int reference)
+        public override string ToString()
+
+NotesList
+	protected List<Note> notes;
+        protected string configFile;
+        protected static NotesList getNotesList;
+        protected string password;
+        protected bool locked;
+
+        protected NotesList()
+        public static NotesList GetNotesList()
+        protected List<Note> load()
+        protected void save()
+        public Note AddNote(string title, string textContent, bool locked)
+        public void RemoveNote(int index)
+        public List<Note> SearchNote(string text, string contentText, DateTime? date, bool partial)
+        public List<Note> SearchNote(string search, bool partial)
+        public List<Note> SearchNote(string content)
+        private bool searchField(string value1, string value2, bool partial)
+        public List<Note> GetNotes()
+        public Note GetNote(int index)
+        public void ModifyNote(int index, string title, string textContent)
+        public bool isLocked() { return locked; }
+        public bool toggleLock(string password)
+        public bool toggleLock()
+        public bool ChangePassword(string lastPassword, string newPassword)
+        public void Export(string rute)
+        public void Import(string rute)
+
+NotesView : Form
+        protected static NotesView notesScreen;
+
+        public NotesView()
+        public static NotesView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void NotesView_FormClosed(object sender, FormClosedEventArgs e)
+        private void addNote_Click(object sender, EventArgs e)
+        public void reload()
+        private void editNote_Click(object sender, EventArgs e)
+        private void deleteNote_Click(object sender, EventArgs e)
+        private void backToMenu_Click(object sender, EventArgs e)
+        private void buttonUnlock_enterPasswrod_click(object sender, EventArgs e)
+        private void buttonLockUnlock_Click(object sender, EventArgs e)
+
+noteView : Form
+        protected int type;
+        protected Note note;
+        protected string placeholderTitle;
+        protected string placeholderBody;
+
+        public NoteView()
+        public NoteView(Note note)
+        public void Load()
+        protected void loadText()
+        private void buttonSave_Click(object sender, EventArgs e)
+        private void cancelNote_Click(object sender, EventArgs e)
+        private void noteView_FormClosed(object sender, FormClosedEventArgs e)
+        private void noteView_FormClosing(object sender, FormClosingEventArgs e)
+        private void titleNote_Enter(object sender, EventArgs e)
+        private void titleNote_Leave(object sender, EventArgs e)
+        private void contentTextNote_Enter(object sender, EventArgs e)
+        private void contentTextNote_Leave(object sender, EventArgs e)
+
+Reminder
+        protected int id;
+        protected string title;
+        protected string description;
+        protected static int countId = 0;
+
+        public Reminder(int id, string title, string description)
+        public Reminder(string title, string description) :
+        public int GetId()
+        public string GetTitle()
+        public string GetDescription()
+        protected void setId(int id)
+        public void SetTitle(string title)
+        public void SetDescription(string description)
+
+ReminderDate : Reminder
+	protected DateTime date;
+
+        public ReminderDate(int id, string title, string description, DateTime date)
+        public DateTime? GetDate()
+        public void SetDate(DateTime date)
+
+Reminders
+        protected List<Reminder> reminders;
+        protected string configFile;
+        protected static Reminders getReminder;
+
+        protected Reminders()
+        public static Reminders GetReminder()
+        protected List<Reminder> load()
+        protected void save()
+
+RemindersView : Form
+        protected static RemindersView remindersScreen;
+
+        protected RemindersView()
+        public static RemindersView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void RemindersView_FormClosed(object sender, FormClosedEventArgs e)
+
+ReminderView : Form
+        public ReminderView()
+
+        public void Load()
+        protected void loadText()
+
+Settings
+        protected static SettingsView settingsScreen;
+        protected string[] languajes;
+        
+
+        protected SettingsView()
+        public static SettingsView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void SettingsView_FormClosed(object sender, FormClosedEventArgs e)
+        private void comboBoxLanguaje_SelectedIndexChanged(object sender, EventArgs e)
+
+SettingsView : Form
+        protected static SettingsView settingsScreen;
+        protected string[] languajes;
+        
+
+        protected SettingsView()
+        public static SettingsView GetScreen()
+        public void Load()
+        protected void loadText()
+        private void SettingsView_FormClosed(object sender, FormClosedEventArgs e)
+        private void comboBoxLanguaje_SelectedIndexChanged(object sender, EventArgs e)
+
+public struct Files
+	public readonly string ContactsList;
+        public readonly string Calendar;
+        public readonly string NotesList;
+        public readonly string Reminders;
+        public readonly string Settings;
+        public readonly string Dictionaries;
+        public readonly string Help;
+
+        public Files(string contactsList, string calendar, string notesList, string reminders, string settings, string dictionaries, string help)
+
+static class Settings
+        public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, "settings.txt", "dictionaries", null);
+        private static string configFile = ConfigFiles.Settings;
+        private static string dictionaries = ConfigFiles.Dictionaries;
+        private static int codeLanguaje = 0;
+        private static Dictionary<string, string> dictionary;
+
+        public static void Load()
+        private static void loadSettings()
+        private static void save()
+        private static Dictionary<string, string> loadDictionary()
+        public static string GetText(string field)
+        public static int GetCodeLanguaje()
+        public static void SetLanguaje(int newCodeLanguaje)
+        private static void loadAll()

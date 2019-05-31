@@ -51,7 +51,8 @@ namespace Diary
                 }
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Error en lectura de fichero de recordatorios");
+                    Console.WriteLine("Error en lectura de fichero de " +
+                        "recordatorios");
                 }
                 finally
                 {

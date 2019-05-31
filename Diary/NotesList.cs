@@ -49,7 +49,11 @@ namespace Diary
                         if (line != null)
                         {
                             fields = line.Split(';');
-                            list.Add(new Note(Convert.ToInt32(fields[0]),fields[1],fields[2], Convert.ToDateTime(fields[3]), Convert.ToDateTime(fields[4]), Convert.ToBoolean(fields[5])));
+                            list.Add(new Note(Convert.ToInt32(fields[0]), 
+                                fields[1], fields[2], 
+                                Convert.ToDateTime(fields[3]), 
+                                Convert.ToDateTime(fields[4]), 
+                                Convert.ToBoolean(fields[5])));
                         }
                     } while (line != null);
                 }
@@ -136,7 +140,8 @@ namespace Diary
             }
         }
 
-        public List<Note> SearchNote(string text, string contentText, DateTime? date, bool partial)
+        public List<Note> SearchNote(string text, string contentText, 
+            DateTime? date, bool partial)
         {
             List<Note> result = new List<Note>(notes);
 
@@ -178,7 +183,8 @@ namespace Diary
                 i = 0;
                 while (i < result.Count)
                 {
-                    if (searchField(notes[i].GetTextContent(), contentText, partial))
+                    if (searchField(notes[i].GetTextContent(), contentText, 
+                        partial))
                     {
                         i++;
                     }
@@ -199,7 +205,8 @@ namespace Diary
             int i = 0;
             while (i < result.Count)
             {
-                if (searchField(notes[i].GetTitle(), search, partial) || searchField(notes[i].GetTextContent(), search, partial))
+                if (searchField(notes[i].GetTitle(), search, partial) || 
+                    searchField(notes[i].GetTextContent(), search, partial))
                 {
                     i++;
                 }
@@ -246,7 +253,9 @@ namespace Diary
                 {
                     if (n.isLocked())
                     {
-                        nts.Add(new Note(n.GetTitle(), "???????????", n.GetCreateDate(), n.GetLastModifyDate(), n.GetId()));
+                        nts.Add(new Note(n.GetTitle(), "???????????", 
+                            n.GetCreateDate(), n.GetLastModifyDate(), 
+                            n.GetId()));
                     }
                     else
                     {

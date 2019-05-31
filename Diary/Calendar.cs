@@ -51,7 +51,8 @@ namespace Diary
                 }
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Error en lectura de fichero de calendario");
+                    Console.WriteLine("Error en lectura de fichero de " +
+                        "calendario");
                 }
                 finally
                 {
@@ -129,7 +130,8 @@ namespace Diary
             save();
         }
 
-        public List<Event> SearchEvent(string title, DateTime? date, string note, bool partial)
+        public List<Event> SearchEvent(string title, DateTime? date, 
+            string note, bool partial)
         {
             List<Event> result = new List<Event>(events);
             int i;
@@ -194,7 +196,8 @@ namespace Diary
             i = 0;
             while (i < result.Count)
             {
-                if (searchField(events[i].GetTitle(), search, partial) || searchField(events[i].GetNote(), search, partial))
+                if (searchField(events[i].GetTitle(), search, partial) || 
+                    searchField(events[i].GetNote(), search, partial))
                 {
                     i++;
                 }

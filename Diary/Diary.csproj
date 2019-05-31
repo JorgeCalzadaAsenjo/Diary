@@ -74,7 +74,6 @@
     <Compile Include="EventView.Designer.cs">
       <DependentUpon>EventView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Help.cs" />
     <Compile Include="HelpView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +177,7 @@
     <EmbeddedResource Include="SettingsView.resx">
       <DependentUpon>SettingsView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

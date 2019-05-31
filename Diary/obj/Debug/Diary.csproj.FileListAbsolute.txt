@@ -123,3 +123,6 @@ C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.ReminderView.resourc
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.InputPassword.resources
 C:\Users\pikar\Documents\GitHub\Diary\Diary\bin\Debug\Diary.exe.CodeAnalysisLog.xml
 C:\Users\pikar\Documents\GitHub\Diary\Diary\bin\Debug\Diary.exe.lastcodeanalysissucceeded
+C:\Users\Usuario\Documents\GitHub\Diary\Diary\obj\Debug\Diary.EventView.resources
+C:\Users\Usuario\Documents\GitHub\Diary\Diary\obj\Debug\Diary.InputPassword.resources
+C:\Users\Usuario\Documents\GitHub\Diary\Diary\obj\Debug\Diary.ReminderView.resources
