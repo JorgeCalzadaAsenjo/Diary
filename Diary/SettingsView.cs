@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,11 +13,14 @@ namespace Diary
     public partial class SettingsView : Form
     {
         protected static SettingsView settingsScreen;
+        protected string[] languajes;
         
 
         protected SettingsView()
         {
             InitializeComponent();
+            languajes = new string[2];
+            Load();
         }
 
         public static SettingsView GetScreen()
@@ -29,6 +32,26 @@ namespace Diary
             return settingsScreen;
         }
 
+        public void Load()
+        {
+            loadText();
+            //TODO: load images and background (when night mode is implemented)
+            //TODO: load scale (when increasing and decreasing the text is implemented)
+        }
+
+        protected void loadText()
+        {
+            this.Text = "Diary - " + Settings.GetText("Settings");
+            labelLanguaje.Text = Settings.GetText("Languaje") + ":";
+            languajes[0] = Settings.GetText("English");
+            languajes[1] = Settings.GetText("Spanish");
+
+            comboBoxLanguaje.Text = languajes[Settings.GetCodeLanguaje()];
+            comboBoxLanguaje.Items.Clear();
+            comboBoxLanguaje.Items.AddRange(languajes);
+
+        }
+
         private void SettingsView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MenuView.GetScreen().Show();
@@ -38,7 +61,7 @@ namespace Diary
 
         private void comboBoxLanguaje_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Settings.SetLanguaje(comboBoxLanguaje.SelectedIndex);
+            Settings.SetLanguaje(Array.IndexOf(languajes, comboBoxLanguaje.SelectedItem));
         }
     }
 }

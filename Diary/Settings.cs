@@ -31,7 +31,7 @@ namespace Diary
         public static readonly Files ConfigFiles = new Files("contacts.txt", "calendar.txt", "notes.txt", null, "settings.txt", "dictionaries", null);
         private static string configFile = ConfigFiles.Settings;
         private static string dictionaries = ConfigFiles.Dictionaries;
-        private static string languaje = "eng";
+        private static int codeLanguaje = 0;
         private static Dictionary<string, string> dictionary;
 
         public static void Load()
@@ -63,7 +63,7 @@ namespace Diary
                             switch (fields[0])
                             {
                                 case "lang":
-                                    languaje = fields[1];
+                                    codeLanguaje = Convert.ToInt32(fields[1]);
                                     break;
                                 default:
                                     break;
@@ -73,7 +73,7 @@ namespace Diary
                 }
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Error en lectura de fichero de notas");
+                    Console.WriteLine("Error en lectura de fichero de ajustes");
                 }
                 finally
                 {
@@ -101,13 +101,13 @@ namespace Diary
                     writer = File.CreateText("~" + configFile);
                 }
 
-                writer.WriteLine("lang:" + languaje);
+                writer.WriteLine("lang:" + codeLanguaje);
 
                 correctSave = true;
             }
             catch (System.Exception)
             {
-                Console.WriteLine("Error en escritura en fichero de notas");
+                Console.WriteLine("Error en escritura en fichero de ajustes");
             }
             finally
             {
@@ -134,6 +134,18 @@ namespace Diary
 
         private static Dictionary<string, string> loadDictionary()
         {
+            string languaje;
+
+            switch (codeLanguaje)
+            {
+                case 1:
+                    languaje = "esp";
+                    break;
+                default:
+                    languaje = "eng";
+                    break;
+            }
+
             if (languaje != "eng")
             {
                 Dictionary<string,string> d = new Dictionary<string, string>();
@@ -154,13 +166,20 @@ namespace Diary
                             {
                                 fields = line.Split(':');
 
-                                d.Add(fields[0], fields[1]);
+                                if (!d.ContainsKey(fields[0]))
+                                {
+                                    d.Add(fields[0], fields[1]);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Valor duplicado en diccionario. Line " + d.Count + ": " + line);
+                                }
                             }
                         } while (line != null);
                     }
                     catch (System.Exception)
                     {
-                        Console.WriteLine("Error en lectura de fichero de notas");
+                        Console.WriteLine("Error en lectura de fichero de lenguajes");
                     }
                     finally
                     {
@@ -180,29 +199,24 @@ namespace Diary
         public static string GetText(string field)
         {
             string fieldd = field;
-            if (languaje != "eng")
+            Dictionary<string, string> dictionaryy = dictionary;
+            if (codeLanguaje != 0)
             {
-                return dictionary[field];
-            }
-            else
-            {
+                if (dictionary.ContainsKey(field))
+                {
+                    return dictionary[field];
+                }
+                Console.WriteLine("Error " + codeLanguaje + " " + field);
                 return field;
             }
+            return field;
         }
 
-        public static string GetLanguaje() { return languaje; }
+        public static int GetCodeLanguaje() { return codeLanguaje; }
 
-        public static void SetLanguaje(int codeLanguaje)
+        public static void SetLanguaje(int newCodeLanguaje)
         {
-            switch (codeLanguaje)
-            {
-                case 1:
-                    languaje = "esp";
-                    break;
-                default:
-                    languaje = "eng";
-                    break;
-            }
+            codeLanguaje = newCodeLanguaje;
             dictionary = loadDictionary();
             loadAll();
         }
@@ -210,6 +224,23 @@ namespace Diary
         private static void loadAll()
         {
             MenuView.GetScreen().Load();
+            ContactsView.GetScreen().Load();
+            SettingsView.GetScreen().Load();
+            HelpView.GetScreen().Load();
+            CalendarView.GetScreen().Load();
+            NotesView.GetScreen().Load();
+            RemindersView.GetScreen().Load();
+
+
+
+            /*ContactView REVISAR CLASE
+            Notas da error al leer fichero
+            Columnas recordatorios no traducido
+            Textos "creado y modificado" notas no traducido
+            Reminders no se traduce
+            Tamaño ventanas
+            Buscar elementos ()
+            Crear ()*/
         }
     }
 }

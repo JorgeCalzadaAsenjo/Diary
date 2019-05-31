@@ -10,23 +10,12 @@ using System.Windows.Forms;
 
 namespace Diary
 {
-    public partial class HelpView : Form
+    public partial class EventView : Form
     {
-        protected static HelpView helpScreen;
-
-        protected HelpView()
+        public EventView()
         {
             InitializeComponent();
             Load();
-        }
-
-        public static HelpView GetScreen()
-        {
-            if (helpScreen == null)
-            {
-                helpScreen = new HelpView();
-            }
-            return helpScreen;
         }
 
         public void Load()
@@ -38,14 +27,7 @@ namespace Diary
 
         protected void loadText()
         {
-            this.Text = "Diary - " + Settings.GetText("Help");
-        }
-
-        private void HelpView_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MenuView.GetScreen().Show();
-            this.Hide();
-            helpScreen = null;
+            this.Text = "Diary - " + Settings.GetText("Event");
         }
     }
 }

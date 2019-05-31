@@ -51,7 +51,7 @@ namespace Diary
                 }
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Error en lectura de fichero de notas");
+                    Console.WriteLine("Error en lectura de fichero de Contactos");
                 }
                 finally
                 {
@@ -128,15 +128,17 @@ namespace Diary
             save();
         }
 
-        /*public List<Contact> SearchContact()
-        {
-
-        }
-
         public List<Contact> SearchContact()
         {
+            //TODO
+            return contacts;
+        }
 
-        }*/
+        public List<Contact> SearchContactAll()
+        {
+            //TODO
+            return contacts;
+        }
 
         public bool searchField(string value1, string value2, bool partial)
         {
@@ -157,12 +159,12 @@ namespace Diary
             }
         }
 
-        public List<Contact> ShowContacts()
+        public List<Contact> GetContacts()
         {
             return contacts;
         }
 
-        public Contact ShowContact(int index)
+        public Contact GetContact(int index)
         {
             return contacts[index];
         }
@@ -177,12 +179,12 @@ namespace Diary
 
         public void Export(string rute)
         {
-
+            //TODO
         }
 
         public void Import(string rute)
         {
-
+            //TODO
         }
     }
 }

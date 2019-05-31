@@ -51,7 +51,7 @@ namespace Diary
                 }
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Error en lectura de fichero de notas");
+                    Console.WriteLine("Error en lectura de fichero de calendario");
                 }
                 finally
                 {
@@ -226,29 +226,29 @@ namespace Diary
             }
         }
 
-        public List<Event> ShowEvents()
+        public List<Event> GetEvents()
         {
             return events;
         }
 
-        public Event ShowEvent(int index)
+        public Event GetEvent(int index)
         {
             return events[index];
         }
 
         public void ModifyEvents()
         {
-
+            //TODO
         }
 
         public void Export(string rute)
         {
-
+            //TODO
         }
 
         public void Import(string rute)
         {
-
+            //TODO
         }
     }
 }

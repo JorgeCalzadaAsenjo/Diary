@@ -28,25 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsView));
             this.comboBoxLanguaje = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelLanguaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(184, 207);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(416, 249);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "We are working to improve this functionality and eliminate annoying errors. For t" +
-    "he next update this functionality will be ready. Sorry for the inconvenience.";
-            this.textBox1.Visible = false;
             // 
             // comboBoxLanguaje
             // 
@@ -57,27 +42,28 @@
             this.comboBoxLanguaje.Location = new System.Drawing.Point(136, 80);
             this.comboBoxLanguaje.Name = "comboBoxLanguaje";
             this.comboBoxLanguaje.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLanguaje.Sorted = true;
             this.comboBoxLanguaje.TabIndex = 4;
             this.comboBoxLanguaje.Text = "English";
             this.comboBoxLanguaje.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguaje_SelectedIndexChanged);
             // 
-            // label1
+            // labelLanguaje
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Languaje";
+            this.labelLanguaje.AutoSize = true;
+            this.labelLanguaje.Location = new System.Drawing.Point(57, 83);
+            this.labelLanguaje.Name = "labelLanguaje";
+            this.labelLanguaje.Size = new System.Drawing.Size(54, 13);
+            this.labelLanguaje.TabIndex = 5;
+            this.labelLanguaje.Text = "Languaje:";
             // 
             // SettingsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelLanguaje);
             this.Controls.Add(this.comboBoxLanguaje);
-            this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsView";
             this.Text = "Diary - Settings";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsView_FormClosed);
@@ -87,9 +73,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBoxLanguaje;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelLanguaje;
     }
 }

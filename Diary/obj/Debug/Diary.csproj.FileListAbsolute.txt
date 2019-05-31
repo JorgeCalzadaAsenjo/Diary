@@ -118,3 +118,8 @@ C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.exe
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.pdb
 C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.TextBox.resources
 C:\Users\Usuario\Documents\GitHub\Diary\Diary\obj\Debug\Diary.TextBox.resources
+C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.EventView.resources
+C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.ReminderView.resources
+C:\Users\pikar\Documents\GitHub\Diary\Diary\obj\Debug\Diary.InputPassword.resources
+C:\Users\pikar\Documents\GitHub\Diary\Diary\bin\Debug\Diary.exe.CodeAnalysisLog.xml
+C:\Users\pikar\Documents\GitHub\Diary\Diary\bin\Debug\Diary.exe.lastcodeanalysissucceeded

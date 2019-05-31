@@ -28,6 +28,18 @@ namespace Diary
             return calendarScreen;
         }
 
+        public void Load()
+        {
+            loadText();
+            //TODO: load images and background (when night mode is implemented)
+            //TODO: load scale (when increasing and decreasing the text is implemented)
+        }
+
+        protected void loadText()
+        {
+            this.Text = "Diary - " + Settings.GetText("Calendar");
+        }
+
         private void CalendarView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MenuView.GetScreen().Show();

@@ -52,7 +52,7 @@ namespace Diary
             eventToolStripMenuItem.Text = Settings.GetText("Event");
             noteToolStripMenuItem.Text = Settings.GetText("Note");
             reminderToolStripMenuItem.Text = Settings.GetText("Reminder");
-            settingsToolStripMenuItem.Text = Settings.GetText("Settings")
+            settingsToolStripMenuItem.Text = Settings.GetText("Settings");
             diaryHelpToolStripMenuItem.Text = Settings.GetText("Diary help");
             sendCommentToolStripMenuItem.Text = Settings.GetText("Send comment");
             licensingInformationToolStripMenuItem.Text = Settings.GetText("Licensing information");
@@ -103,12 +103,12 @@ namespace Diary
 
         private void contactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
 
         private void eventToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
     }
 }

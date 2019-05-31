@@ -68,12 +68,24 @@
       <DependentUpon>ContactView.cs</DependentUpon>
     </Compile>
     <Compile Include="Event.cs" />
+    <Compile Include="EventView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventView.Designer.cs">
+      <DependentUpon>EventView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Help.cs" />
     <Compile Include="HelpView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HelpView.Designer.cs">
       <DependentUpon>HelpView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputPassword.Designer.cs">
+      <DependentUpon>InputPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuView.cs">
       <SubType>Form</SubType>
@@ -98,12 +110,19 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reminder.cs" />
+    <Compile Include="ReminderDate.cs" />
     <Compile Include="Reminders.cs" />
     <Compile Include="RemindersView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RemindersView.Designer.cs">
       <DependentUpon>RemindersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReminderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReminderView.Designer.cs">
+      <DependentUpon>ReminderView.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsView.cs">
@@ -122,8 +141,14 @@
     <EmbeddedResource Include="ContactView.resx">
       <DependentUpon>ContactView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EventView.resx">
+      <DependentUpon>EventView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HelpView.resx">
       <DependentUpon>HelpView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputPassword.resx">
+      <DependentUpon>InputPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuView.resx">
       <DependentUpon>MenuView.cs</DependentUpon>
@@ -146,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="RemindersView.resx">
       <DependentUpon>RemindersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReminderView.resx">
+      <DependentUpon>ReminderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsView.resx">
       <DependentUpon>SettingsView.cs</DependentUpon>

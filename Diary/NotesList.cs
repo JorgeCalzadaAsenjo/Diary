@@ -15,6 +15,8 @@ namespace Diary
         protected NotesList()
         {
             configFile = Settings.ConfigFiles.NotesList;
+            password = "San Vicente";
+            locked = true;
             notes = load();
         }
 
@@ -234,16 +236,33 @@ namespace Diary
             }
         }
 
-        public List<Note> ShowNotes()
+        public List<Note> GetNotes()
         {
-            if (locked)
-            {
+            List<Note> nts = new List<Note>();
 
+            foreach (Note n in notes)
+            {
+                if (locked)
+                {
+                    if (n.isLocked())
+                    {
+                        nts.Add(new Note(n.GetTitle(), "???????????", n.GetCreateDate(), n.GetLastModifyDate(), n.GetId()));
+                    }
+                    else
+                    {
+                        nts.Add(n);
+                    }
+                }
+                else
+                {
+                    nts.Add(n);
+                }
             }
-            return notes;
+
+            return nts;
         }
 
-        public Note ShowNote(int index)
+        public Note GetNote(int index)
         {
             return notes[index];
         }
@@ -257,8 +276,10 @@ namespace Diary
 
         public bool isLocked() { return locked; }
 
-        public void toggleLock(string password)
+        public bool toggleLock(string password)
         {
+            bool lastState = locked;
+
             if (locked && this.password.Equals(password))
             {
                 locked = false;
@@ -267,11 +288,13 @@ namespace Diary
             {
                 locked = true;
             }
+
+            return !lastState == locked;
         }
 
-        public void toggleLock()
+        public bool toggleLock()
         {
-            this.toggleLock("");
+            return this.toggleLock("");
         }
 
         public bool ChangePassword(string lastPassword, string newPassword)
@@ -286,12 +309,12 @@ namespace Diary
 
         public void Export(string rute)
         {
-
+            //TODO
         }
 
         public void Import(string rute)
         {
-
+            //TODO
         }
     }
 }

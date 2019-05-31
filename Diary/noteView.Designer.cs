@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoteView));
             this.titleNote = new System.Windows.Forms.TextBox();
             this.contentTextNote = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.cancelNote = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelCreated = new System.Windows.Forms.Label();
+            this.labelModify = new System.Windows.Forms.Label();
+            this.buttonLockUnlock = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleNote
@@ -70,67 +74,88 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // cancelNote
+            // buttonCancel
             // 
-            this.cancelNote.Location = new System.Drawing.Point(600, 398);
-            this.cancelNote.Name = "cancelNote";
-            this.cancelNote.Size = new System.Drawing.Size(75, 23);
-            this.cancelNote.TabIndex = 3;
-            this.cancelNote.Text = "Cancel";
-            this.cancelNote.UseVisualStyleBackColor = true;
-            this.cancelNote.Click += new System.EventHandler(this.cancelNote_Click);
+            this.buttonCancel.Location = new System.Drawing.Point(600, 398);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 3;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.cancelNote_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label1
+            // labelCreated
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(63, 361);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Created: 03/05/2019 16:15";
+            this.labelCreated.AutoSize = true;
+            this.labelCreated.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelCreated.Location = new System.Drawing.Point(63, 361);
+            this.labelCreated.Name = "labelCreated";
+            this.labelCreated.Size = new System.Drawing.Size(138, 13);
+            this.labelCreated.TabIndex = 4;
+            this.labelCreated.Text = "Created: 03/05/2019 16:15";
             // 
-            // label3
+            // labelModify
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(559, 361);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Last modify: 23/12/2019 12:15";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelModify.AutoSize = true;
+            this.labelModify.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelModify.Location = new System.Drawing.Point(559, 361);
+            this.labelModify.Name = "labelModify";
+            this.labelModify.Size = new System.Drawing.Size(154, 13);
+            this.labelModify.TabIndex = 6;
+            this.labelModify.Text = "Last modify: 23/12/2019 12:15";
+            this.labelModify.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
+            // buttonLockUnlock
             // 
-            this.button1.Location = new System.Drawing.Point(337, 398);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Lock";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLockUnlock.Location = new System.Drawing.Point(337, 398);
+            this.buttonLockUnlock.Name = "buttonLockUnlock";
+            this.buttonLockUnlock.Size = new System.Drawing.Size(75, 23);
+            this.buttonLockUnlock.TabIndex = 7;
+            this.buttonLockUnlock.Text = "Lock";
+            this.buttonLockUnlock.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
             // NoteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cancelNote);
+            this.Controls.Add(this.buttonLockUnlock);
+            this.Controls.Add(this.labelModify);
+            this.Controls.Add(this.labelCreated);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.contentTextNote);
             this.Controls.Add(this.titleNote);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "NoteView";
-            this.Text = "noteView";
+            this.Text = "Diary - Note";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.noteView_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.noteView_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,10 +166,12 @@
         private System.Windows.Forms.TextBox titleNote;
         private System.Windows.Forms.TextBox contentTextNote;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button cancelNote;
+        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonLockUnlock;
+        private System.Windows.Forms.Label labelModify;
+        private System.Windows.Forms.Label labelCreated;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
     }
 }

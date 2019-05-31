@@ -20,3 +20,33 @@ Send comment:Enviar comentario
 Licensing information:Información sobre licencia
 Search for update:Buscar actualizaciones
 About Diary:Sobre Diary
+Edit:Editar
+Remove:Borrar
+Search in all:Buscar en todo
+Name:Nombre
+Surname:Apellidos
+Phone:Telefono
+Languaje:Idioma
+This field cannot be empty:Este campo no puede estar vacío
+This field does not have a valid format:Este campo no tiene un formato válido
+Open:Abrir
+Close:Cerrar
+Lock:Bloquear
+Unlock:Desbloquear
+Save:Guardar
+Cancel:Cancelar
+Confirm:Confirmar
+Save before you leave?:¿Guardar antes de salir?
+Enter a title:Introduce el titulo
+Enter a text:Introduce el texto
+Created:Creado
+Last modified:Última modificación
+Title:Título
+Task:Tarea
+The password you entered is invalid. Try again to unlock notes.:La contraseña introducida no es válida. Vuelva a intentarlo para desbloquear notas.
+Wrong password:Contraseña incorrecta
+Password:Contraseña
+Show password:Mostrar contraseña
+Enter password:Introduce contraseña
+Spanish:Español
+English:Inglés

@@ -14,15 +14,18 @@ namespace Diary
     {
         protected int type;
         protected Note note;
+        protected string placeholderTitle;
+        protected string placeholderBody;
 
         public NoteView()
         {
             InitializeComponent();
             type = 0;
-            titleNote.Text = "Enter a title ";
+            titleNote.Text = placeholderTitle;
             titleNote.ForeColor = Color.LightGray;
-            contentTextNote.Text = "Enter a text ";
+            contentTextNote.Text = placeholderBody;
             contentTextNote.ForeColor = Color.LightGray;
+            Load();
         }
 
         public NoteView(Note note)
@@ -32,17 +35,36 @@ namespace Diary
             type = 1;
             titleNote.Text = note.GetTitle();
             contentTextNote.Text = note.GetTextContent();
+            Load();
+        }
+
+        public void Load()
+        {
+            loadText();
+            //TODO: load images and background (when night mode is implemented)
+            //TODO: load scale (when increasing and decreasing the text is implemented)
+        }
+
+        protected void loadText()
+        {
+            this.Text = "Diary - " + Settings.GetText("Note");
+            fileToolStripMenuItem.Text = Settings.GetText("File");
+            buttonSave.Text = Settings.GetText("Save");
+            buttonCancel.Text = Settings.GetText("Cancel");
+            buttonLockUnlock.Text = Settings.GetText("Lock");
+            placeholderTitle = Settings.GetText("Enter a title") + " ";
+            placeholderBody = Settings.GetText("Enter a text") + " ";
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string title = !titleNote.Text.Equals("Enter a title ") ? titleNote.Text : "";
-            string content = contentTextNote.Text.Equals("Enter a text ") ? contentTextNote.Text : "";
+            string title = !titleNote.Text.Equals(placeholderTitle) ? titleNote.Text : "";
+            string content = contentTextNote.Text.Equals(placeholderBody) ? contentTextNote.Text : "";
 
 
             if (type == 0)
             {
-                this.note = NotesList.GetNotesList().AddNote(title, content);
+                this.note = NotesList.GetNotesList().AddNote(title, content,false);
             }
             else if (type == 1)
             {
@@ -64,15 +86,15 @@ namespace Diary
 
         private void noteView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((note == null && ((!titleNote.Text.Equals("") && (!titleNote.Text.Equals("Enter a title ")) || (!contentTextNote.Text.Equals("")) && !contentTextNote.Text.Equals("Enter a text "))) || (note != null && (!note.GetTitle().Equals(titleNote.Text) || !note.GetTextContent().Equals(contentTextNote.Text)))))
+            if ((note == null && ((!titleNote.Text.Equals("") && (!titleNote.Text.Equals(placeholderTitle)) || (!contentTextNote.Text.Equals("")) && !contentTextNote.Text.Equals(placeholderBody))) || (note != null && (!note.GetTitle().Equals(titleNote.Text) || !note.GetTextContent().Equals(contentTextNote.Text)))))
             {
-                DialogResult confirmResult = MessageBox.Show("Save before you leave?", "Confirma", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult confirmResult = MessageBox.Show(Settings.GetText("Save before you leave?"), Settings.GetText("Confirm"), MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
                 if (confirmResult == DialogResult.Yes)
                 {
                     if (type == 0)
                     {
-                        this.note = NotesList.GetNotesList().AddNote(titleNote.Text, contentTextNote.Text);
+                        this.note = NotesList.GetNotesList().AddNote(titleNote.Text, contentTextNote.Text,false);
                     }
                     else if (type == 1)
                     {
@@ -90,7 +112,7 @@ namespace Diary
 
         private void titleNote_Enter(object sender, EventArgs e)
         {
-            if (titleNote.Text == ("Enter a title "))
+            if (titleNote.Text == (placeholderTitle))
             {
                 titleNote.Text = "";
                 titleNote.ForeColor = Color.Black;
@@ -102,14 +124,14 @@ namespace Diary
         {
             if (titleNote.Text == "")
             {
-                titleNote.Text = "Enter a title ";
+                titleNote.Text = placeholderTitle;
                 titleNote.ForeColor = Color.LightGray;
             }
         }
 
         private void contentTextNote_Enter(object sender, EventArgs e)
         {
-            if (contentTextNote.Text == ("Enter a text "))
+            if (contentTextNote.Text == (placeholderBody))
             {
                 contentTextNote.Text = "";
                 contentTextNote.ForeColor = Color.Black;
@@ -120,7 +142,7 @@ namespace Diary
         {
             if (contentTextNote.Text == "")
             {
-                contentTextNote.Text = "Enter a text ";
+                contentTextNote.Text = placeholderBody;
                 contentTextNote.ForeColor = Color.LightGray;
             }
         }
